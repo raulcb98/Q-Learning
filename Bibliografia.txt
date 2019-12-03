@@ -1,9 +1,0 @@
-*** BIBLIOGRAFÍA ***
-
-https://es.wikipedia.org/wiki/Q-learning 
-
-https://rubenlopezg.wordpress.com/2015/05/12/q-learning-aprendizaje-automatico-por-refuerzo/  
-
-Video 1 -> https://www.youtube.com/watch?v=gzFN6UTTpH0&
-Video 3 -> https://www.youtube.com/watch?v=ZoRMKs8XLSA&
-
