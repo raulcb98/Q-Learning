@@ -11,40 +11,49 @@ public class State {
 	private boolean backBlock;
 	private boolean leftBlock;
 	private boolean rightBlock;
+	
+	private boolean frontDanger;
+	private boolean backDanger;
 	private boolean leftDanger;
 	private boolean rightDanger;
+	
+	private int compass;
 	
 	public static final int POSFRONTBLOCK = 0;
 	public static final int POSBACKBLOCK = 1;
 	public static final int POSLEFTBLOCK = 2;
 	public static final int POSRIGHTBLOCK = 3;
-	public static final int POSLEFTDANGER = 4;
-	public static final int POSRIGHTDANGER = 5;
+	public static final int POSFRONTDANGER = 4;
+	public static final int POSBACKDANGER = 5;
+	public static final int POSLEFTDANGER = 6;
+	public static final int POSRIGHTDANGER = 7;
+	public static final int POSCOMPASS = 8;
+	
+	public static final int NORTH = 0;
+	public static final int SOUTH = 1; 
+	public static final int EAST = 2;
+	public static final int WEST = 3;
 	
 	public State() {
 		
 	}
 	
-	public State(boolean frontBlock, boolean backBlock, boolean leftBlock, boolean rightBlock, boolean leftDanger, boolean rightDanger){
-		this.frontBlock = frontBlock;
-		this.backBlock = backBlock;
-		this.leftBlock = leftBlock;
-		this.rightBlock = rightBlock;
-		this.leftDanger = leftDanger;
-		this.rightDanger = rightDanger;
-	}
-		
 	public State(ArrayList<Integer> array) {
 		update(array);		
 	}
 	
-	public void update(ArrayList<Integer> array) {
+	protected void update(ArrayList<Integer> array) {
 		frontBlock = (array.get(POSFRONTBLOCK) == 0 ? false : true);
 		backBlock = (array.get(POSBACKBLOCK) == 0 ? false : true);
 		leftBlock = (array.get(POSLEFTBLOCK) == 0 ? false : true);
 		rightBlock = (array.get(POSRIGHTBLOCK) == 0 ? false : true);
+		
+		frontDanger = (array.get(POSFRONTDANGER) == 0 ? false : true);
+		backDanger = (array.get(POSBACKDANGER) == 0 ? false : true);	
 		leftDanger = (array.get(POSLEFTDANGER) == 0 ? false : true);
-		rightDanger = (array.get(POSRIGHTDANGER) == 0 ? false : true);		
+		rightDanger = (array.get(POSRIGHTDANGER) == 0 ? false : true);	
+		
+		compass = array.get(POSCOMPASS);
 	}
 	
 	@Override
@@ -54,8 +63,34 @@ public class State {
 				 this.backBlock == aux.backBlock && 
 				 this.leftBlock == aux.leftBlock &&
 				 this.rightBlock == aux.rightBlock &&
+				 this.frontDanger == aux.frontDanger &&
+				 this.backDanger == aux.backDanger &&
 				 this.leftDanger == aux.leftDanger &&
-				 this.rightDanger == aux.rightDanger);
+				 this.rightDanger == aux.rightDanger &&
+				 this.compass == aux.compass);
 	}
 
+	@Override
+	public String toString() {
+		String str = "";
+		
+		str = "frontBlock = " + Boolean.toString(frontBlock) + "\n" + 
+				"backBlock = " + Boolean.toString(backBlock) + "\n" + 
+				"leftBlock = " + Boolean.toString(leftBlock) + "\n" + 
+				"rightBlock = " + Boolean.toString(rightBlock) + "\n" + 
+				"frontDanger = " + Boolean.toString(frontDanger) + "\n" + 
+				"backDanger = " + Boolean.toString(backDanger) + "\n" + 
+				"leftDanger = " + Boolean.toString(leftDanger) + "\n" + 
+				"rigthDanger = " + Boolean.toString(rightDanger) + "\n" + 
+				"compass = ";
+		
+		switch (compass) {
+			case NORTH: str += "North"; break;
+			case SOUTH: str += "South"; break;
+			case EAST: str += "East"; break;
+			case WEST: str += "West"; break;
+		}
+
+		return str;
+	}
 }

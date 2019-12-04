@@ -1,0 +1,19 @@
+Categoría 6: Coche.
+Type:
+	7: Derecha
+	8: Derecha
+	10: Izquierda
+	11: Izquierda
+
+Categoría 4: Inmóvil.
+Type:
+	0: Borde
+	13: Árbol
+
+Categoría 0: Avatar.
+Type: 
+	15: Avatar
+
+Categoría 2: Portal.
+Type:
+	4: Portal.

@@ -4,18 +4,32 @@ import java.util.ArrayList;
 
 public class StateGenerator {
 	
+	@SuppressWarnings("unchecked")
 	public static ArrayList<State> generate() {
 		int[] values = new int[2];
 		values[0] = 0;
 		values[1] = 1;
-		ArrayList<ArrayList<Integer>> combStates = combnk(6, values);
+		
+		// Generation and filtering states without compass
+		ArrayList<ArrayList<Integer>> combStates = combnk(8, values);
 		filterStates(combStates);
 		
-		ArrayList<State> output = new ArrayList<State>();
+		int[] compassValues = {State.NORTH, State.SOUTH, State.EAST, State.WEST};
 		
-		for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
-			output.add(new State(combStates.get(indexArray)));
+		ArrayList<State> output = new ArrayList<State>();
+		ArrayList<Integer> aux;
+		
+		for(int indexCompass = 0; indexCompass < compassValues.length; indexCompass++) {
+			for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
+				aux = (ArrayList<Integer>) combStates.get(indexArray).clone();
+				aux.add(compassValues[indexCompass]);
+				output.add(new State(aux));
+			}
 		}
+		
+//		for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
+//			output.add(new State(combStates.get(indexArray)));
+//		}
 		
 		return output;			
 	}
@@ -61,23 +75,24 @@ public class StateGenerator {
 		boolean backBlock = (comb.get(State.POSBACKBLOCK) == 0 ? false : true);
 		boolean leftBlock = (comb.get(State.POSLEFTBLOCK) == 0 ? false : true);
 		boolean rightBlock = (comb.get(State.POSRIGHTBLOCK) == 0 ? false : true);
+		
+		boolean frontDanger = (comb.get(State.POSFRONTDANGER) == 0 ? false : true);
+		boolean backDanger = (comb.get(State.POSBACKDANGER) == 0 ? false : true);
 		boolean leftDanger = (comb.get(State.POSLEFTDANGER) == 0 ? false : true);
 		boolean rightDanger = (comb.get(State.POSRIGHTDANGER) == 0 ? false : true);
 		
 		if(frontBlock && backBlock && leftBlock && rightBlock) return false;
 		if(leftDanger && rightDanger) return false;
 		if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
+		if(frontDanger && frontBlock) return false;
+		if(backDanger && backBlock) return false;
 		
 		return true;	
 	}
 	
 	public static void main(String[] args) {
 		
-		int[] values = new int[2];
-		values[0] = 0;
-		values[1] = 1;
-		ArrayList<ArrayList<Integer>> test = combnk(6, values);
-		filterStates(test);
+		ArrayList<State> test = generate();
 		System.out.println("Tamaño del vector: " + test.size());
 		for(int i = 0; i < test.size(); i++) {
 			System.out.println(test.get(i) + "*");
