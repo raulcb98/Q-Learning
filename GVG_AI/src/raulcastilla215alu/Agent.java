@@ -9,10 +9,14 @@ import core.game.StateObservation;
 import core.player.AbstractPlayer;
 import ontology.Types;
 import ontology.Types.ACTIONS;
+import raulcastilla215alu.matrix.QTable;
 import raulcastilla215alu.mytools.AgentState;
 import raulcastilla215alu.mytools.IOModule;
+import raulcastilla215alu.mytools.StateGenerator;
 import tools.ElapsedCpuTimer;
 import tools.Vector2d;
+import raulcastilla215alu.mytools.State;;
+ 
 
 /**
  * Created with IntelliJ IDEA.
@@ -45,6 +49,18 @@ public class Agent extends AbstractPlayer {
         randomGenerator = new Random();
         actions = so.getAvailableActions();
         currentState = new AgentState(so);
+        
+        ArrayList<State> states = StateGenerator.generate();
+        ArrayList<ACTIONS> actions = so.getAvailableActions(true);
+		QTable tabla = new QTable(states , actions);
+		tabla.toCSV("./QTable/Qtable.txt");
+		
+		State s = states.get(4);
+		ACTIONS a = actions.get(2);
+//		
+//		System.out.println(tabla.get(s, a));
+//		System.out.println(tabla.getMaxQValue(s));
+//		System.out.println(actions.get(3));
         
 //        for(ArrayList<Observation> v: so.getImmovablePositions())
 //        	System.out.println(v);
@@ -137,10 +153,9 @@ public class Agent extends AbstractPlayer {
 //    	for(int i = 0; i < 400000; i++) {
 //    		System.out.print(" ");
 //    	}
-    	
     	currentState.perceive(stateObs);;
     	int ticks = stateObs.getGameTick();
-    	IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
+    	IOModule.write("./SaveGames/History.txt", ticks + "\n" + currentState.toString(), true);
 //    	System.out.println(stateObs.getAvatarOrientation());
     	
 //    	System.out.println(currentState);
@@ -149,6 +164,7 @@ public class Agent extends AbstractPlayer {
         // Cuadricular dividiendo tamaño real entre getBlockSize() esto hacerlo en el constructor
         // hacemos nuestro propio mapa de ese juego. 
 	    int index = randomGenerator.nextInt(actions.size());
+	    
         return actions.get(index);
     }
 
