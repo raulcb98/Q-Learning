@@ -43,8 +43,9 @@ public class Test {
 		String game = games[gameIdx][0];
 		String level1 = game.replace(gameName, gameName + "_lvl" + levelIdx);
 
-		String recordActionsFile = null;// "actions_" + games[gameIdx] + "_lvl"
-						// + levelIdx + "_" + seed + ".txt";
+		String recordActionsFile = "./actions_" + games[gameIdx][1] + "_lvl" + Integer.toString(levelIdx) + "_" + Integer.toString(seed) + ".txt";
+						//"actions_" + "freeway" + "_lvl" + Integer.toString(levelIdx) + "_" + Integer.toString(seed) + ".txt";
+						//null
 						// where to record the actions
 						// executed. null if not to save.
 
@@ -53,12 +54,13 @@ public class Test {
 
 		// 2. This plays a game in a level by the controller.
   		// ArcadeMachine.runOneGame(game, level1, visuals, sampleRHEAController, recordActionsFile, seed, 0);
-  		ArcadeMachine.runOneGame(game, level1, visuals, miJugador, recordActionsFile, seed, 0);
+//  		ArcadeMachine.runOneGame(game, level1, visuals, miJugador, recordActionsFile, seed, 0);
 
 
 		// 3. This replays a game from an action file previously recorded
-	//	 String readActionsFile = recordActionsFile;
-	//	 ArcadeMachine.replayGame(game, level1, visuals, readActionsFile);
+//		 String name = "actions_freeway_lvl0_771920790";
+//		 String readActionsFile = "./" + name + ".txt";
+//		 ArcadeMachine.replayGame(game, level1, visuals, readActionsFile);
 
 		// 4. This plays a single game, in N levels, M times :
 //		String level2 = new String(game).replace(gameName, gameName + "_lvl" + 1);

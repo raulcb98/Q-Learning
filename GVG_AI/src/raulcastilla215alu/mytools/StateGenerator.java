@@ -2,8 +2,18 @@ package raulcastilla215alu.mytools;
 
 import java.util.ArrayList;
 
+/**
+ * Generates all possible and logical agent state.
+ * 
+ * @author Ricardo Manuel Ruiz Díaz.
+ * @author Raúl Castilla Bravo.
+ */
 public class StateGenerator {
 	
+	/**
+	 * Generates all possible and logical agent state.
+	 * @return An array of states.
+	 */
 	@SuppressWarnings("unchecked")
 	public static ArrayList<State> generate() {
 		int[] values = new int[2];
@@ -26,18 +36,27 @@ public class StateGenerator {
 				output.add(new State(aux));
 			}
 		}
-		
-//		for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
-//			output.add(new State(combStates.get(indexArray)));
-//		}
-		
+			
 		return output;			
 	}
 	
+	/**
+	 * Generates all possible combinations using the values and length specified.
+	 * @param length size of combination.
+	 * @param values possible values for each positions.
+	 * @return an array of arrays of integers.
+	 */
 	private static ArrayList<ArrayList<Integer>> combnk(int length, int[] values) {
 		return combnkRec(length-1, values, new ArrayList<ArrayList<Integer>>());
 	}
 	
+	/**
+	 * Recursive call for combnk
+	 * @param length size of combination.
+	 * @param values possible values for each positions.
+	 * @param array memory space to save middle values.
+	 * @return an array of arrays of integers.
+	 */
 	@SuppressWarnings("unchecked")
 	private static ArrayList<ArrayList<Integer>> combnkRec(int length, int[] values, ArrayList<ArrayList<Integer>> array){
 		if(length == 0) {
@@ -61,6 +80,10 @@ public class StateGenerator {
 		return output;				
 	}
 	
+	/**
+	 * Removes illogical states.
+	 * @param combStates an array of arrays of integers with all possible combinations.
+	 */
 	private static void filterStates(ArrayList<ArrayList<Integer>> combStates){
 		for(int i = 0; i < combStates.size(); i++ ) {
 			if(!isValid(combStates.get(i))) {
@@ -70,6 +93,11 @@ public class StateGenerator {
 		}
 	}
 
+	/**
+	 * Applies restrictions to filter a state.
+	 * @param comb array of integers with one combination of values.
+	 * @return true if overcomes all restrictions.
+	 */
 	private static boolean isValid(ArrayList<Integer> comb) {
 		boolean frontBlock = (comb.get(State.POSFRONTBLOCK) == 0 ? false : true);
 		boolean backBlock = (comb.get(State.POSBACKBLOCK) == 0 ? false : true);
@@ -88,17 +116,6 @@ public class StateGenerator {
 		if(backDanger && backBlock) return false;
 		
 		return true;	
-	}
-	
-	public static void main(String[] args) {
-		
-		ArrayList<State> test = generate();
-		System.out.println("Tamaño del vector: " + test.size());
-		for(int i = 0; i < test.size(); i++) {
-			System.out.println(test.get(i) + "*");
-			
-		}
-		
 	}
 	
 }

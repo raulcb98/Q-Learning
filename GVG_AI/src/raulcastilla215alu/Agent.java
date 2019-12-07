@@ -10,6 +10,7 @@ import core.player.AbstractPlayer;
 import ontology.Types;
 import ontology.Types.ACTIONS;
 import raulcastilla215alu.mytools.AgentState;
+import raulcastilla215alu.mytools.IOModule;
 import tools.ElapsedCpuTimer;
 import tools.Vector2d;
 
@@ -133,14 +134,17 @@ public class Agent extends AbstractPlayer {
 //    		contador++;
 //    	}
     	
-    	for(int i = 0; i < 400000; i++) {
-    		System.out.print(" ");
-    	}
+//    	for(int i = 0; i < 400000; i++) {
+//    		System.out.print(" ");
+//    	}
     	
-    	currentState.update(stateObs);;
+    	currentState.perceive(stateObs);;
+    	int ticks = stateObs.getGameTick();
+    	IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
+//    	System.out.println(stateObs.getAvatarOrientation());
     	
-    	System.out.println(currentState);
-    	System.out.println("*********************************");
+//    	System.out.println(currentState);
+//    	System.out.println("*********************************");
 
         // Cuadricular dividiendo tamaño real entre getBlockSize() esto hacerlo en el constructor
         // hacemos nuestro propio mapa de ese juego. 

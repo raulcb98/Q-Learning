@@ -6,11 +6,24 @@ import core.game.Observation;
 import core.game.StateObservation;
 import tools.Vector2d;
 
+/**
+ * Defines an agent state.
+ * 
+ * @author Raúl Castilla Bravo.
+ * @author Ricardo Manuel Ruiz Díaz.
+ *
+ */
 public class AgentState extends State {
 
+	/**
+	 * Private attributes.
+	 */
 	private Vector2d agentPos;
 	private int blockSize;
 	private int dangerDistance;
+	
+	private boolean agentWin;
+	private boolean agentDead;
 	
 	public static final int IMMOVABLE = 4;
 	public static final int MOVABLE = 6;
@@ -23,14 +36,25 @@ public class AgentState extends State {
 	public static final int RIGHT = 1;
 	public static final int NONORIENTATION = 2;
 	
+	/**
+	 * Constructor.
+	 * @param stateObs game observations.
+	 */
 	public AgentState(StateObservation stateObs) {
 		blockSize = stateObs.getBlockSize();
-		dangerDistance = 2;
-		update(stateObs);
+		dangerDistance = 3;
+		perceive(stateObs);
 	}
 	
-	public void update(StateObservation stateObs) {
-		agentPos = calculateCell(stateObs.getAvatarPosition(), stateObs.getBlockSize());		
+	/**
+	 * Interprets game informations.
+	 * @param stateObs game observations.
+	 */
+	public void perceive(StateObservation stateObs) {
+		agentPos = calculateCell(stateObs.getAvatarPosition(), stateObs.getBlockSize());	
+		
+		agentDead = isDead(stateObs);
+		agentWin = isWinner(stateObs);
 		
 		ArrayList<Observation>[][] grid = stateObs.getObservationGrid();
 		
@@ -66,27 +90,44 @@ public class AgentState extends State {
 		for(int i = 0; i < stateValues.length; i++) {
 			arrayStateValues.add(stateValues[i]);
 		}
-		
+				
 		super.update(arrayStateValues);
 	}
 	
-	
-	public static Vector2d calculateCell(Vector2d agentPos, int blockSize) {
+	/**
+	 * Cast the position expressed in reals values to position expressed in cell coordinates.
+	 * @param pos position expressed in reals values.
+	 * @param blockSize reference measure to cast positions.
+	 * @return position expressed in cell coordinates.
+	 */
+	public static Vector2d calculateCell(Vector2d pos, int blockSize) {
 		Vector2d cellCoords = new Vector2d();
 		
-		int x = (int) (agentPos.x/blockSize);
-		int y = (int) (agentPos.y/blockSize);
+		int x = (int) (pos.x/blockSize);
+		int y = (int) (pos.y/blockSize);
 		
 		cellCoords.set(x, y);
 		
 		return cellCoords;
 	}
 	
+	/**
+	 * Checks if the first observation of the ArrayList has the same category.
+	 * @param obs array of observations.
+	 * @param category category which must be compared.
+	 * @return true if the category is same.
+	 */
 	private boolean isThisCategory(ArrayList<Observation> obs, int category) {
 		if(obs.isEmpty()) return false;
 		return obs.get(0).category == category;
 	}
 	
+	/**
+	 * Checks if exist a danger in the position specified taking into account the highway orientation.
+	 * @param grid game grid.
+	 * @param pos position which must be checked expressed in cell coordinate.
+	 * @return true if exist a car which could run over the agent.
+	 */
 	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d pos) {
 		
 		int highwayOrientation = getHighwayOrientation(grid, pos);
@@ -97,6 +138,13 @@ public class AgentState extends State {
 		return false;
 	}
 	
+	/**
+	 * Checks if exist a danger in the position specified without taking into account the highway orientation.
+	 * @param grid game grid.
+	 * @param pos position which must be checked expressed in cell coordinates.
+	 * @param orientation indicates the side of the road which must be checked.
+	 * @return true if exist a car which could run over the agent.
+	 */
 	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d agentPos, int orientation) {
 		ArrayList<Observation> observationRow = new ArrayList<>();
 		int carType1 = -1; 
@@ -149,13 +197,27 @@ public class AgentState extends State {
 		return observationRow.size() != 0;
 	}
 	
-	private boolean isNear(Observation obs, Vector2d agentPos, int blockDistance) {
+	/**
+	 * Checks if the distance of the observation and pos is less or equal than the distance.
+	 * indicated by parameter. It only takes into account the axis x.
+	 * @param obs observation which must be checked. 
+	 * @param pos position to calculate the distance expressed in cell coordinates.
+	 * @param blockDistance max distance to consider near the object. 
+	 * @return true if the distance of the observation and pos is less or equal than the distance.
+	 */
+	private boolean isNear(Observation obs, Vector2d pos, int blockDistance) {
 		Vector2d obsBlocks = calculateCell(obs.position, blockSize);
 		
-		int dif = (int) Math.abs(obsBlocks.x-agentPos.x);
+		int dif = (int) Math.abs(obsBlocks.x-pos.x);
 		return dif <= blockDistance;
 	}
 	
+	/**
+	 * Calculates the direction of the compass of the agent.
+	 * @param portalPos position of the goal.
+	 * @param agentPos position of the agent expressed in cell coordinates.
+	 * @return the direction of the compass.
+	 */
 	private int compassDirection(Vector2d portalPos, Vector2d agentPos) {
 		Vector2d portalBlockPos = calculateCell(portalPos, blockSize);
 		
@@ -177,6 +239,12 @@ public class AgentState extends State {
 		}
 	}
 
+	/**
+	 * Checks the highway orientation of the road in the pos introduced by parameters.
+	 * @param grid game grid.
+	 * @param pos position to be checked expressed in cell coordinate.
+	 * @return left, right or non orientation.
+	 */
 	private int getHighwayOrientation(ArrayList<Observation>[][] grid, Vector2d pos) {
 		ArrayList<Observation> cars = new ArrayList<>();
 		
@@ -192,6 +260,47 @@ public class AgentState extends State {
 		if(cars.get(0).itype == RIGHTCAR1 || cars.get(0).itype == RIGHTCAR2) return RIGHT;
 		
 		return LEFT;
+	}
+	
+	/**
+	 * Checks if the agent is dead.
+	 * @param stateObs game information.
+	 * @return true if the agent is dead.
+	 */
+	private boolean isDead(StateObservation stateObs) {
+		Vector2d orientation = stateObs.getAvatarOrientation();
+		return orientation.equals(new Vector2d(0,1));
+	}
+	
+	/**
+	 * Checks if the agent has won.
+	 * @param stateObs game information.
+	 * @return true if the agent has won.
+	 */
+	private boolean isWinner(StateObservation stateObs) {
+		ArrayList<Observation>[] obs = stateObs.getPortalsPositions();
+		
+		if(obs == null) {
+			return false;
+		}
+		
+		Observation portal = obs[0].get(0);
+		Vector2d portalPosition = calculateCell(portal.position, blockSize);
+		
+		return portalPosition.equals(agentPos);		
+	}
+	
+	/**
+	 * Returns a String with the information of the Object.
+	 */
+	@Override
+	public String toString() {
+		String str = super.toString();
+		str +=  "\nAgent position = " + agentPos.toString() + "\n" +
+				"Agent win = " + Boolean.toString(agentWin) + "\n" +
+				"Agent dead = " + Boolean.toString(agentDead) + "\n\n";
+		
+		return str;
 	}
 
 }

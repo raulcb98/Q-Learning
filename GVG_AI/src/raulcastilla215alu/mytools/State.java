@@ -2,6 +2,12 @@ package raulcastilla215alu.mytools;
 
 import java.util.ArrayList;
 
+/**
+ * Defines a Q-Table state.
+ * 
+ * @author Ricardo Manuel Ruiz Díaz
+ * @author Raúl Castilla Bravo
+ */
 public class State {
 	
 	/**
@@ -34,14 +40,25 @@ public class State {
 	public static final int EAST = 2;
 	public static final int WEST = 3;
 	
+	/**
+	 * Default constructor.
+	 */
 	public State() {
 		
 	}
 	
+	/**
+	 * Constructor. 
+	 * @param array Private attributes values expressed with integers.
+	 */
 	public State(ArrayList<Integer> array) {
 		update(array);		
 	}
 	
+	/**
+	 * Updates private attributes values.
+	 * @param array Updates private attributes values.
+	 */
 	protected void update(ArrayList<Integer> array) {
 		frontBlock = (array.get(POSFRONTBLOCK) == 0 ? false : true);
 		backBlock = (array.get(POSBACKBLOCK) == 0 ? false : true);
@@ -56,6 +73,9 @@ public class State {
 		compass = array.get(POSCOMPASS);
 	}
 	
+	/**
+	 * Returns true if the attributes are exactly the same.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		State aux = (State) obj;
@@ -70,6 +90,9 @@ public class State {
 				 this.compass == aux.compass);
 	}
 
+	/**
+	 * Returns a String with the information of the object.
+	 */
 	@Override
 	public String toString() {
 		String str = "";
