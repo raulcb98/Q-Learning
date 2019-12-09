@@ -68,7 +68,7 @@ public class Matrix {
 	 * @param path Ruta a un archivo CSV.
 	 */
 	@SuppressWarnings("deprecation")
-	private void readCSV(String path, char sep) {
+	protected void readCSV(String path, char sep) {
 		
 		// Variables locales
 		Reader reader = null;

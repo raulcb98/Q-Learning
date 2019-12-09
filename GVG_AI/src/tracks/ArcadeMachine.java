@@ -879,8 +879,14 @@ public class ArcadeMachine {
             e.printStackTrace();
             }
         } else {
+        	
+        	if(players[0] instanceof  raulcastilla215alu.Agent) {
+        		((raulcastilla215alu.Agent)players[0]).close();
+        	}
+        	
             // single player, let the player do all of this.
             players[0].teardown(toPlay);
+            
         }
 
         for (Player p : players) {

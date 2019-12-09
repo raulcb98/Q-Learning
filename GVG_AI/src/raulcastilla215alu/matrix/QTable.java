@@ -1,5 +1,6 @@
 package raulcastilla215alu.matrix;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,10 +12,16 @@ public class QTable extends Matrix {
 	private ArrayList<State> states;
 	private ArrayList<ACTIONS> actions;
 	
-	public QTable(ArrayList<State> states, ArrayList<ACTIONS> actions) {
+	public QTable(ArrayList<State> states, ArrayList<ACTIONS> actions, String path) {
 		this.states = states;
 		this.actions = actions;
-		initializesWithRandoms();
+		
+		File qTableFile = new File(path);
+		if (!qTableFile.exists()) {
+			initializesWithRandoms();
+		} else {
+			readCSV(path, ',');
+		}
 	}
 	
 	public float get(State s, ACTIONS a) {

@@ -47,6 +47,20 @@ public class State {
 		
 	}
 	
+	public State(State obj) {
+		this.frontBlock = obj.frontBlock;
+		this.backBlock = obj.backBlock;
+		this.leftBlock = obj.leftBlock;
+		this.rightBlock = obj.rightBlock;
+		
+		this.frontDanger = obj.frontDanger;
+		this.backDanger = obj.backDanger;
+		this.leftDanger = obj.leftDanger;
+		this.rightDanger = obj.rightDanger;
+		
+		this.compass = obj.compass;
+	}
+	
 	/**
 	 * Constructor. 
 	 * @param array Private attributes values expressed with integers.

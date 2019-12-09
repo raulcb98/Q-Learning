@@ -866,3 +866,3377 @@ Agent position = 13.0 : 12.0
 Agent win = false
 Agent dead = false
 
+0
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+1
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+2
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+3
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+4
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = true
+
+5
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = true
+
+6
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = true
+
+7
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+8
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+9
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+10
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+11
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = false
+
+12
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+13
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+14
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+15
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 11.0
+Agent win = false
+Agent dead = false
+
+16
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 10.0
+Agent win = false
+Agent dead = false
+
+17
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 10.0
+Agent win = false
+Agent dead = false
+
+18
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = true
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 9.0
+Agent win = false
+Agent dead = true
+
+19
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = true
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 9.0
+Agent win = false
+Agent dead = true
+
+20
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 10.0
+Agent win = false
+Agent dead = true
+
+21
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = true
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 11.0
+Agent win = false
+Agent dead = true
+
+22
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 12.0 : 12.0
+Agent win = false
+Agent dead = true
+
+23
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = true
+
+24
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+25
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+26
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 13.0
+Agent win = false
+Agent dead = false
+
+27
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+28
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+29
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 12.0
+Agent win = false
+Agent dead = false
+
+30
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+31
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+32
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+33
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+34
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+35
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 16.0 : 12.0
+Agent win = false
+Agent dead = false
+
+36
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+37
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 16.0 : 12.0
+Agent win = false
+Agent dead = true
+
+38
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 16.0 : 12.0
+Agent win = false
+Agent dead = true
+
+39
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = true
+
+40
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+41
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+42
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+43
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+44
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+45
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+46
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+47
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+48
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+49
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+50
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 18.0 : 13.0
+Agent win = false
+Agent dead = false
+
+51
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+52
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 18.0 : 13.0
+Agent win = false
+Agent dead = false
+
+53
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+54
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 17.0 : 12.0
+Agent win = false
+Agent dead = false
+
+55
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 17.0 : 13.0
+Agent win = false
+Agent dead = false
+
+56
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 13.0
+Agent win = false
+Agent dead = false
+
+57
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+58
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 13.0
+Agent win = false
+Agent dead = false
+
+59
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+60
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+61
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+62
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 13.0
+Agent win = false
+Agent dead = false
+
+63
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 13.0
+Agent win = false
+Agent dead = false
+
+64
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+65
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 12.0
+Agent win = false
+Agent dead = false
+
+66
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+67
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+68
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 12.0
+Agent win = false
+Agent dead = false
+
+69
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 13.0
+Agent win = false
+Agent dead = false
+
+70
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 12.0
+Agent win = false
+Agent dead = false
+
+71
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 15.0 : 12.0
+Agent win = false
+Agent dead = false
+
+72
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 16.0 : 12.0
+Agent win = false
+Agent dead = false
+
+73
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 11.0
+Agent win = false
+Agent dead = false
+
+74
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 11.0
+Agent win = false
+Agent dead = false
+
+75
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 11.0
+Agent win = false
+Agent dead = false
+
+76
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 16.0 : 11.0
+Agent win = false
+Agent dead = false
+
+0
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+1
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+2
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+3
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+4
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+5
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+6
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 12.0
+Agent win = false
+Agent dead = false
+
+7
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 14.0 : 12.0
+Agent win = false
+Agent dead = false
+
+8
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 12.0
+Agent win = false
+Agent dead = false
+
+9
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 13.0 : 12.0
+Agent win = false
+Agent dead = false
+
+10
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 12.0 : 12.0
+Agent win = false
+Agent dead = false
+
+11
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+12
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+13
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+14
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+15
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+16
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+17
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+18
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = true
+
+19
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = true
+
+20
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = true
+
+21
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+22
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+23
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+24
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+25
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 12.0 : 12.0
+Agent win = false
+Agent dead = true
+
+26
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 12.0 : 12.0
+Agent win = false
+Agent dead = true
+
+27
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = true
+
+28
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+29
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+30
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+31
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+32
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+33
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+34
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+35
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = false
+
+36
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+37
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 11.0
+Agent win = false
+Agent dead = false
+
+38
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 10.0
+Agent win = false
+Agent dead = false
+
+39
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+40
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+41
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+42
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+43
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+44
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 10.0
+Agent win = false
+Agent dead = false
+
+45
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+46
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+47
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = true
+
+48
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = true
+
+49
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = true
+
+50
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+51
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+52
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+53
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 7.0 : 13.0
+Agent win = false
+Agent dead = false
+
+54
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 7.0 : 12.0
+Agent win = false
+Agent dead = false
+
+55
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 7.0 : 12.0
+Agent win = false
+Agent dead = false
+
+56
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+57
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = false
+
+58
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+59
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = false
+
+60
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = true
+
+61
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = true
+
+62
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = true
+
+63
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+64
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+65
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+66
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+67
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+0
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+1
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 13.0 : 12.0
+Agent win = false
+Agent dead = true
+
+2
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 13.0 : 12.0
+Agent win = false
+Agent dead = true
+
+3
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = true
+
+4
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+5
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+6
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+7
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+8
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+9
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+10
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+11
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+12
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+13
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+14
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+15
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+16
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+17
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = false
+
+18
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+19
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+20
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+21
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = true
+
+22
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = true
+
+23
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = true
+
+24
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+25
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+26
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+27
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = false
+
+28
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+29
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+30
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = true
+
+31
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = true
+
+32
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = true
+
+33
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+34
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = false
+
+35
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+36
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 11.0
+Agent win = false
+Agent dead = false
+
+37
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+38
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 10.0
+Agent win = false
+Agent dead = false
+
+39
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+40
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 11.0
+Agent win = false
+Agent dead = false
+
+41
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 10.0
+Agent win = false
+Agent dead = false
+
+42
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = true
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 9.0
+Agent win = false
+Agent dead = false
+
+43
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 10.0
+Agent win = false
+Agent dead = false
+
+44
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 11.0
+Agent win = false
+Agent dead = false
+
+45
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+46
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+47
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+48
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 13.0
+Agent win = false
+Agent dead = false
+
+49
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 13.0
+Agent win = false
+Agent dead = false
+
+50
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = false
+
+51
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+52
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 12.0 : 12.0
+Agent win = false
+Agent dead = false
+
+53
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+54
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+55
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+56
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 14.0 : 13.0
+Agent win = false
+Agent dead = false
+
+57
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+58
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+59
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 13.0 : 13.0
+Agent win = false
+Agent dead = false
+
+60
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 12.0 : 13.0
+Agent win = false
+Agent dead = false
+
+61
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 11.0 : 13.0
+Agent win = false
+Agent dead = false
+
+62
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 11.0 : 12.0
+Agent win = false
+Agent dead = false
+
+63
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 12.0
+Agent win = false
+Agent dead = false
+
+64
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+65
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+66
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+67
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+68
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+69
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+70
+frontBlock = false
+backBlock = false
+leftBlock = true
+rightBlock = false
+frontDanger = false
+backDanger = true
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 11.0
+Agent win = false
+Agent dead = false
+
+71
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = true
+
+72
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = true
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = true
+
+73
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = true
+
+74
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+75
+frontBlock = false
+backBlock = true
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 13.0
+Agent win = false
+Agent dead = false
+
+76
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+77
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 7.0 : 12.0
+Agent win = false
+Agent dead = false
+
+78
+frontBlock = true
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 7.0 : 12.0
+Agent win = false
+Agent dead = false
+
+79
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 8.0 : 12.0
+Agent win = false
+Agent dead = false
+
+80
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 12.0
+Agent win = false
+Agent dead = false
+
+81
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+82
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 10.0
+Agent win = false
+Agent dead = false
+
+83
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 9.0
+Agent win = false
+Agent dead = false
+
+84
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 9.0
+Agent win = false
+Agent dead = false
+
+85
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 9.0
+Agent win = false
+Agent dead = false
+
+86
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 9.0
+Agent win = false
+Agent dead = false
+
+87
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+88
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 11.0
+Agent win = false
+Agent dead = false
+
+89
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+90
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 9.0
+Agent win = false
+Agent dead = false
+
+91
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+
+92
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 10.0
+Agent win = false
+Agent dead = false
+
+93
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = false
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 11.0
+Agent win = false
+Agent dead = false
+
+94
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 9.0 : 10.0
+Agent win = false
+Agent dead = false
+
+95
+frontBlock = false
+backBlock = false
+leftBlock = false
+rightBlock = false
+frontDanger = true
+backDanger = false
+leftDanger = false
+rigthDanger = false
+compass = North
+Agent position = 10.0 : 10.0
+Agent win = false
+Agent dead = false
+

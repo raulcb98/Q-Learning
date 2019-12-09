@@ -46,6 +46,15 @@ public class AgentState extends State {
 		perceive(stateObs);
 	}
 	
+	public AgentState(AgentState obj) {
+		super(obj);
+		this.agentPos = new Vector2d(obj.agentPos);
+		this.blockSize = obj.blockSize;
+		this.dangerDistance = obj.dangerDistance;
+		this.agentDead = obj.agentDead;
+		this.agentWin = obj.agentWin;
+	}
+	
 	/**
 	 * Interprets game informations.
 	 * @param stateObs game observations.
