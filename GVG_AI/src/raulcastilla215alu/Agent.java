@@ -66,8 +66,14 @@ public class Agent extends AbstractPlayer {
 //    	for(int i = 0; i < 1000000; i++) {
 //    		System.out.println("");
 //    	}
-
-        return brain.think(stateObs);
+//    	brain.think(stateObs);
+//    	
+//    	ArrayList<ACTIONS> actions = stateObs.getAvailableActions(true);
+//    	Random rd = new Random();
+//    	int action = rd.nextInt(actions.size());
+//    	
+//        return actions.get(action);
+    	return brain.think(stateObs);
     }
     
     public void close() {

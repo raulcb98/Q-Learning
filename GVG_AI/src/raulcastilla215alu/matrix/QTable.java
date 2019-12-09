@@ -19,6 +19,7 @@ public class QTable extends Matrix {
 		File qTableFile = new File(path);
 		if (!qTableFile.exists()) {
 			initializesWithRandoms();
+			System.out.println("Creo con randoms");
 		} else {
 			readCSV(path, ',');
 		}
@@ -69,7 +70,27 @@ public class QTable extends Matrix {
 		}
 	}
 	
-	public ACTIONS getMaxQValue(State s) {
+	public float getMaxQValue(State s) {
+		int indexRow = states.indexOf(s);
+		if(indexRow == -1) {
+			System.out.println("longitud= " + states.size());
+			System.out.println("indexRow = " + indexRow);
+			System.out.println("States = " + (State)s);
+		}
+		
+		ArrayList<String> array = getRow(indexRow);
+		float max = Float.parseFloat(array.get(0));
+		
+		for(int i = 1; i < array.size(); i++) {
+			float value = Float.parseFloat(array.get(i));
+			if (max < value) {
+				max = value;
+			}
+		}
+		return max;
+	}
+	
+	public ACTIONS getBestAction(State s) {
 		int indexRow = states.indexOf(s);
 		ArrayList<String> array = getRow(indexRow);
 		float max = Float.parseFloat(array.get(0));
@@ -86,12 +107,10 @@ public class QTable extends Matrix {
 		return actions.get(indexMax);
 	}
 	
-	public static void main(String[] args) {
-		
-
-		
-		
+	public ACTIONS getRandomAction() {
+    	Random rd = new Random();
+    	int action = rd.nextInt(actions.size());
+    	
+        return actions.get(action);
 	}
-	
-	
 }

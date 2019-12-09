@@ -19,6 +19,7 @@ public class AgentState extends State {
 	 * Private attributes.
 	 */
 	private Vector2d agentPos;
+	private Vector2d portalPos;
 	private int blockSize;
 	private int dangerDistance;
 	
@@ -49,6 +50,13 @@ public class AgentState extends State {
 	public AgentState(AgentState obj) {
 		super(obj);
 		this.agentPos = new Vector2d(obj.agentPos);
+		
+		if(obj.portalPos != null) {
+			this.portalPos = new Vector2d(obj.portalPos);
+		}  else {
+			this.portalPos = null;
+		}
+		
 		this.blockSize = obj.blockSize;
 		this.dangerDistance = obj.dangerDistance;
 		this.agentDead = obj.agentDead;
@@ -90,6 +98,7 @@ public class AgentState extends State {
 		
 		ArrayList<Observation>[] arrayObs = stateObs.getPortalsPositions();
 		if(arrayObs != null) {
+			portalPos = calculateCell(arrayObs[0].get(0).position, blockSize);
 			stateValues[POSCOMPASS] = compassDirection(arrayObs[0].get(0).position, agentPos);
 		} else {
 			stateValues[POSCOMPASS] = NORTH;
@@ -299,6 +308,16 @@ public class AgentState extends State {
 		return portalPosition.equals(agentPos);		
 	}
 	
+	public float getDistanceToPortal() {
+		
+		float difX = (float) (agentPos.x - portalPos.x);
+		float difY = (float) (agentPos.y - portalPos.y);
+		
+		return (float) Math.sqrt(difX*difX + difY*difY);
+		
+		// return (float) agentPos.dist(portalPos);
+	}
+	
 	/**
 	 * Returns a String with the information of the Object.
 	 */
@@ -310,6 +329,18 @@ public class AgentState extends State {
 				"Agent dead = " + Boolean.toString(agentDead) + "\n\n";
 		
 		return str;
+	}
+
+	public boolean isAgentWin() {
+		return agentWin;
+	}
+
+	public boolean isAgentDead() {
+		return agentDead;
+	}
+	
+	public boolean portalExist() {
+		return portalPos != null;
 	}
 
 }

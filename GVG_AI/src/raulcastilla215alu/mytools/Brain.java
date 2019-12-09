@@ -13,6 +13,7 @@ public class Brain {
 	private AgentState previousState;
 	private ACTIONS lastAction;
 	private String savePath;
+	private int deadCounter;
 	
 	public Brain(StateObservation stateObs) {
 		savePath = "./QTable/Qtable.txt";
@@ -24,13 +25,26 @@ public class Brain {
         ArrayList<ACTIONS> actions = stateObs.getAvailableActions(true);
 		QTable qTable = new QTable(states , actions, savePath);
 		qLearning = new QLearning(qTable);
+		
+		deadCounter = 0;
 	}
 	
 	public ACTIONS think(StateObservation stateObs) {
 		previousState = new AgentState(currentState);
 		currentState.perceive(stateObs);
 		lastAction = stateObs.getAvatarLastAction();
-		return qLearning.learn(previousState, lastAction, currentState);
+		
+		if(currentState.isAgentDead()) {
+			deadCounter++;
+		} else {
+			deadCounter = 0;
+		}
+		
+		if(deadCounter > 1 || !previousState.portalExist()) {
+			return ACTIONS.ACTION_NIL;
+		} else {
+			return qLearning.learn(previousState, lastAction, currentState);
+		}
 	}
 	
 	public void saveQTable() {

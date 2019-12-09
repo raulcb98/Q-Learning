@@ -111,11 +111,15 @@ public class StateGenerator {
 		
 		if(frontBlock && backBlock && leftBlock && rightBlock) return false;
 		if(leftDanger && rightDanger) return false;
-		if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
+		// if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
 		if(frontDanger && frontBlock) return false;
 		if(backDanger && backBlock) return false;
 		
 		return true;	
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Longitud = " + StateGenerator.generate().size());
 	}
 	
 }

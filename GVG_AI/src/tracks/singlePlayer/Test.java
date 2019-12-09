@@ -54,7 +54,7 @@ public class Test {
 
 		// 2. This plays a game in a level by the controller.
   		// ArcadeMachine.runOneGame(game, level1, visuals, sampleRHEAController, recordActionsFile, seed, 0);
-  		ArcadeMachine.runOneGame(game, level1, visuals, miJugador, recordActionsFile, seed, 0);
+ 		ArcadeMachine.runOneGame(game, level1, visuals, miJugador, recordActionsFile, seed, 0);
 
 
 		// 3. This replays a game from an action file previously recorded
@@ -63,11 +63,12 @@ public class Test {
 //		 ArcadeMachine.replayGame(game, level1, visuals, readActionsFile);
 
 		// 4. This plays a single game, in N levels, M times :
-//		String level2 = new String(game).replace(gameName, gameName + "_lvl" + 1);
-//		int M = 10;
-//		game = games[43][0];
-//		gameName = games[43][1];
-//		for(int i=0; i<5; i++){
+		//String level2 = new String(game).replace(gameName, gameName + "_lvl" + 1);
+//		int M = 500;
+//		int N = 1;
+//		game = games[gameIdx][0];
+//		gameName = games[gameIdx][1];
+//		for(int i=0; i<N; i++){
 //			level1 = game.replace(gameName, gameName + "_lvl" + levelIdx);
 //			// ArcadeMachine.runGames(game, new String[]{level1}, M, sampleMCTSController, null);
 //			ArcadeMachine.runGames(game, new String[]{level1}, M, miJugador, null);
