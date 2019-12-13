@@ -19,9 +19,10 @@ public class QTable extends Matrix {
 		File qTableFile = new File(path);
 		if (!qTableFile.exists()) {
 			initializesWithRandoms();
-			System.out.println("Creo con randoms");
+			System.out.println("Genero mi propia QTable");
 		} else {
 			readCSV(path, ',');
+			System.out.println("He leido la QTable");
 		}
 	}
 	

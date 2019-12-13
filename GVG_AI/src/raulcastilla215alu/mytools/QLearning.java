@@ -13,11 +13,12 @@ public class QLearning {
 	private static double time = 0;
 	private float epsilon;
 	
-	private final float CONSTANT = 40000;
-	private final float WINREWARD = 10000f;
-	private final float DEADREWARD = -100f;
-	private final float STOPREWARD = -10f;
-	private final float DISTANCEFACTOR = 200f;
+	private final float CONSTANT = 70000;
+	private final float WINREWARD = 2000f;
+	private final float DEADREWARD = -800f;
+	private final float STOPREWARD = 0;
+	private final float DISTANCEFACTOR = 400f;
+	private final float GOBACKREWARD = -150f;
 	
 	public QLearning(QTable qTable) {
 		this.qTable = qTable;
@@ -52,12 +53,11 @@ public class QLearning {
 		
 		//System.out.println("Current distance = " + currentDistance + " Previous Distance = " + previousDistance);
 		
-		if(currentDistance < previousDistance) {
-			distanceReward += previousDistance/currentDistance * DISTANCEFACTOR;
-		} else {
-			distanceReward += -currentDistance/previousDistance;
-		}
-		 
+		float difDistance = previousDistance - currentDistance;
+		if (difDistance > 0)
+			distanceReward += difDistance * DISTANCEFACTOR;
+		else
+			distanceReward += Math.abs(difDistance) * GOBACKREWARD;
 		
 		finalReward += distanceReward;
 		
@@ -67,11 +67,11 @@ public class QLearning {
 		}
 		
 		// Win reward
-		if(currentState.isAgentWin()) {
+		if(currentState.getScore() > previousState.getScore()) {
 			finalReward += WINREWARD;
 		}
 		
-		// Stop reward
+		//Stop reward
 		if(previousDistance == currentDistance) {
 			finalReward += STOPREWARD;
 		}
@@ -82,13 +82,12 @@ public class QLearning {
 	private ACTIONS nextAction(AgentState currentState) {
 		Random rd = new Random();
 		float randomNumber = Math.abs(rd.nextFloat());
-		
-		return qTable.getBestAction(currentState);
-//		if(randomNumber < epsilon) {
-//			return qTable.getRandomAction();
-//		} else {
-//			return qTable.getBestAction(currentState);
-//		}
+
+		if (randomNumber < epsilon) {
+			return qTable.getRandomAction();
+		} else {
+			return qTable.getBestAction(currentState);
+		}
 	}
 	
 	private void updateConstants() {

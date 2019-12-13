@@ -14,22 +14,23 @@ public class Brain {
 	private ACTIONS lastAction;
 	private String savePath;
 	private int deadCounter;
+	private QTable qTable;
 	
-	public Brain(StateObservation stateObs) {
-		savePath = "./QTable/Qtable.txt";
+	public Brain(StateObservation stateObs, String savePath) {
+		this.savePath = savePath;
         currentState = new AgentState(stateObs);
         previousState = new AgentState(stateObs);
         lastAction = stateObs.getAvatarLastAction();
         
         ArrayList<State> states = StateGenerator.generate();
         ArrayList<ACTIONS> actions = stateObs.getAvailableActions(true);
-		QTable qTable = new QTable(states , actions, savePath);
+		qTable = new QTable(states , actions, savePath);
 		qLearning = new QLearning(qTable);
 		
 		deadCounter = 0;
 	}
 	
-	public ACTIONS think(StateObservation stateObs) {
+	public ACTIONS learn(StateObservation stateObs) {
 		previousState = new AgentState(currentState);
 		currentState.perceive(stateObs);
 		lastAction = stateObs.getAvatarLastAction();
@@ -45,6 +46,19 @@ public class Brain {
 		} else {
 			return qLearning.learn(previousState, lastAction, currentState);
 		}
+	}
+	
+	public ACTIONS act(StateObservation stateObs) {
+		
+		currentState.perceive(stateObs);;
+        int ticks = stateObs.getGameTick();
+        IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
+		
+		currentState.perceive(stateObs);
+		if(currentState.portalExist())
+			return qTable.getBestAction(currentState);
+		else
+			return ACTIONS.ACTION_NIL; 
 	}
 	
 	public void saveQTable() {

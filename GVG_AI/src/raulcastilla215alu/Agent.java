@@ -46,11 +46,11 @@ public class Agent extends AbstractPlayer {
      * @param so state observation of the current game.
      * @param elapsedTimer Timer for the controller creation.
      */
-    public Agent(StateObservation so, ElapsedCpuTimer elapsedTimer)
-    {
+    public Agent(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
+    	String savePath = "./QTable/Qtable.txt";
         randomGenerator = new Random();
-        brain = new Brain(so);
-        actions = so.getAvailableActions(true);
+        brain = new Brain(stateObs, savePath);
+        actions = stateObs.getAvailableActions(true);
     }
 
 
@@ -63,17 +63,12 @@ public class Agent extends AbstractPlayer {
      */
     public Types.ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
         
-//    	for(int i = 0; i < 1000000; i++) {
+//    	for(int i = 0; i < 100000; i++) {
 //    		System.out.println("");
 //    	}
-//    	brain.think(stateObs);
-//    	
-//    	ArrayList<ACTIONS> actions = stateObs.getAvailableActions(true);
-//    	Random rd = new Random();
-//    	int action = rd.nextInt(actions.size());
-//    	
-//        return actions.get(action);
-    	return brain.think(stateObs);
+    	        
+    	return brain.act(stateObs);
+//    	return brain.learn(stateObs);
     }
     
     public void close() {

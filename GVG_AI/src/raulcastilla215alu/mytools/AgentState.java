@@ -21,10 +21,12 @@ public class AgentState extends State {
 	private Vector2d agentPos;
 	private Vector2d portalPos;
 	private int blockSize;
-	private int dangerDistance;
+	private int leftRightDangerDistance;
+	private int frontBackDangerDistance;
 	
-	private boolean agentWin;
 	private boolean agentDead;
+	
+	private double score;
 	
 	public static final int IMMOVABLE = 4;
 	public static final int MOVABLE = 6;
@@ -43,7 +45,9 @@ public class AgentState extends State {
 	 */
 	public AgentState(StateObservation stateObs) {
 		blockSize = stateObs.getBlockSize();
-		dangerDistance = 3;
+		leftRightDangerDistance = 3;
+		frontBackDangerDistance = 3;
+		score = stateObs.getGameScore();
 		perceive(stateObs);
 	}
 	
@@ -57,10 +61,10 @@ public class AgentState extends State {
 			this.portalPos = null;
 		}
 		
+		this.score = obj.score;
 		this.blockSize = obj.blockSize;
-		this.dangerDistance = obj.dangerDistance;
+		this.leftRightDangerDistance = obj.leftRightDangerDistance;
 		this.agentDead = obj.agentDead;
-		this.agentWin = obj.agentWin;
 	}
 	
 	/**
@@ -69,9 +73,8 @@ public class AgentState extends State {
 	 */
 	public void perceive(StateObservation stateObs) {
 		agentPos = calculateCell(stateObs.getAvatarPosition(), stateObs.getBlockSize());	
-		
+		score = stateObs.getGameScore();
 		agentDead = isDead(stateObs);
-		agentWin = isWinner(stateObs);
 		
 		ArrayList<Observation>[][] grid = stateObs.getObservationGrid();
 		
@@ -84,6 +87,11 @@ public class AgentState extends State {
 		stateValues[POSBACKBLOCK] = (isThisCategory(grid[x][y+1], IMMOVABLE) ? 1 : 0);
 		stateValues[POSLEFTBLOCK] = (isThisCategory(grid[x-1][y], IMMOVABLE) ? 1 : 0);
 		stateValues[POSRIGHTBLOCK] = (isThisCategory(grid[x+1][y], IMMOVABLE) ? 1 : 0);
+		
+		stateValues[POSFRONTDANGER] = (isThisCategory(grid[x][y-1], MOVABLE) ? 1 : 0);
+		stateValues[POSBACKDANGER] = (isThisCategory(grid[x][y+1], MOVABLE) ? 1 : 0);
+		stateValues[POSLEFTDANGER] = (isThisCategory(grid[x-1][y], MOVABLE) ? 1 : 0);
+		stateValues[POSRIGHTDANGER] = (isThisCategory(grid[x+1][y], MOVABLE) ? 1 : 0);
 
 		Vector2d frontAgentPos = new Vector2d();
 		frontAgentPos.set(agentPos.x, agentPos.y-1);
@@ -91,10 +99,17 @@ public class AgentState extends State {
 		Vector2d backAgentPos = new Vector2d();
 		backAgentPos.set(agentPos.x, agentPos.y+1);
 		
-		stateValues[POSFRONTDANGER] = (inDanger(grid, frontAgentPos) ? 1 : 0);
-		stateValues[POSBACKDANGER] = (inDanger(grid, backAgentPos) ? 1 : 0);
-		stateValues[POSLEFTDANGER] = (inDanger(grid, agentPos, LEFT) ? 1 : 0);
-		stateValues[POSRIGHTDANGER] = (inDanger(grid, agentPos, RIGHT) ? 1 : 0);
+		if(stateValues[POSFRONTDANGER] == 0)
+			stateValues[POSFRONTDANGER] = (inDanger(grid, frontAgentPos, frontBackDangerDistance) ? 1 : 0);
+		
+		if(stateValues[POSBACKDANGER] == 0)
+			stateValues[POSBACKDANGER] = (inDanger(grid, backAgentPos, frontBackDangerDistance) ? 1 : 0);
+		
+		if(stateValues[POSLEFTDANGER] == 0)
+			stateValues[POSLEFTDANGER] = (inDanger(grid, agentPos, LEFT, leftRightDangerDistance) ? 1 : 0);
+		
+		if(stateValues[POSRIGHTDANGER] == 0)
+			stateValues[POSRIGHTDANGER] = (inDanger(grid, agentPos, RIGHT, leftRightDangerDistance) ? 1 : 0);
 		
 		ArrayList<Observation>[] arrayObs = stateObs.getPortalsPositions();
 		if(arrayObs != null) {
@@ -146,12 +161,12 @@ public class AgentState extends State {
 	 * @param pos position which must be checked expressed in cell coordinate.
 	 * @return true if exist a car which could run over the agent.
 	 */
-	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d pos) {
+	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d pos, int dangerDistance) {
 		
 		int highwayOrientation = getHighwayOrientation(grid, pos);
 		
-		if(highwayOrientation == LEFT) return inDanger(grid, pos, RIGHT); 
-		if(highwayOrientation == RIGHT) return inDanger(grid, pos, LEFT); // Si los coches van hacia la derecha, yo miro a la izquierda.
+		if(highwayOrientation == LEFT) return inDanger(grid, pos, RIGHT, dangerDistance); 
+		if(highwayOrientation == RIGHT) return inDanger(grid, pos, LEFT, dangerDistance); // Si los coches van hacia la derecha, yo miro a la izquierda.
 		
 		return false;
 	}
@@ -163,7 +178,7 @@ public class AgentState extends State {
 	 * @param orientation indicates the side of the road which must be checked.
 	 * @return true if exist a car which could run over the agent.
 	 */
-	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d agentPos, int orientation) {
+	private boolean inDanger(ArrayList<Observation>[][] grid, Vector2d agentPos, int orientation, int dangerDistance) {
 		ArrayList<Observation> observationRow = new ArrayList<>();
 		int carType1 = -1; 
 		int carType2 = -1;
@@ -237,8 +252,9 @@ public class AgentState extends State {
 	 * @return the direction of the compass.
 	 */
 	private int compassDirection(Vector2d portalPos, Vector2d agentPos) {
-		Vector2d portalBlockPos = calculateCell(portalPos, blockSize);
 		
+		Vector2d portalBlockPos = calculateCell(portalPos, blockSize);
+		/*
 		int modX = (int) (portalBlockPos.x - agentPos.x);
 		int modY = (int) (portalBlockPos.y - agentPos.y);
 		
@@ -255,6 +271,16 @@ public class AgentState extends State {
 				return WEST;
 			}
 		}
+		*/
+		
+		if(portalBlockPos.y < agentPos.y) return NORTH;
+		if(portalBlockPos.y > agentPos.y) return SOUTH;	
+		if(portalBlockPos.x < agentPos.x) return EAST;
+		if(portalBlockPos.x > agentPos.x) return WEST;
+		
+		
+		return NORTH;
+
 	}
 
 	/**
@@ -289,25 +315,7 @@ public class AgentState extends State {
 		Vector2d orientation = stateObs.getAvatarOrientation();
 		return orientation.equals(new Vector2d(0,1));
 	}
-	
-	/**
-	 * Checks if the agent has won.
-	 * @param stateObs game information.
-	 * @return true if the agent has won.
-	 */
-	private boolean isWinner(StateObservation stateObs) {
-		ArrayList<Observation>[] obs = stateObs.getPortalsPositions();
 		
-		if(obs == null) {
-			return false;
-		}
-		
-		Observation portal = obs[0].get(0);
-		Vector2d portalPosition = calculateCell(portal.position, blockSize);
-		
-		return portalPosition.equals(agentPos);		
-	}
-	
 	public float getDistanceToPortal() {
 		
 		float difX = (float) (agentPos.x - portalPos.x);
@@ -325,14 +333,10 @@ public class AgentState extends State {
 	public String toString() {
 		String str = super.toString();
 		str +=  "\nAgent position = " + agentPos.toString() + "\n" +
-				"Agent win = " + Boolean.toString(agentWin) + "\n" +
-				"Agent dead = " + Boolean.toString(agentDead) + "\n\n";
+				"Agent dead = " + Boolean.toString(agentDead) + "\n" +
+				"Score = " + score + "\n\n";
 		
 		return str;
-	}
-
-	public boolean isAgentWin() {
-		return agentWin;
 	}
 
 	public boolean isAgentDead() {
@@ -341,6 +345,10 @@ public class AgentState extends State {
 	
 	public boolean portalExist() {
 		return portalPos != null;
+	}
+	
+	public double getScore() {
+		return score;
 	}
 
 }

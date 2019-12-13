@@ -110,8 +110,8 @@ public class StateGenerator {
 		boolean rightDanger = (comb.get(State.POSRIGHTDANGER) == 0 ? false : true);
 		
 		if(frontBlock && backBlock && leftBlock && rightBlock) return false;
-		if(leftDanger && rightDanger) return false;
-		// if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
+		//if(leftDanger && rightDanger) return false;
+		//if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
 		if(frontDanger && frontBlock) return false;
 		if(backDanger && backBlock) return false;
 		
