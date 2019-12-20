@@ -20,7 +20,6 @@ public class AgentState extends State {
 	 */
 	private Vector2d agentPos;
 	private Vector2d portalCellPos;
-	private Vector2d portalRealPos;
 	private int blockSize;
 	private int leftRightDangerDistance;
 	private int frontBackDangerDistance;
@@ -62,12 +61,6 @@ public class AgentState extends State {
 			this.portalCellPos = null;
 		}
 		
-		if(obj.portalRealPos != null) {
-			this.portalRealPos = new Vector2d(obj.portalRealPos);
-		}  else {
-			this.portalRealPos = null;
-		}
-		
 		this.score = obj.score;
 		this.blockSize = obj.blockSize;
 		this.leftRightDangerDistance = obj.leftRightDangerDistance;
@@ -93,16 +86,12 @@ public class AgentState extends State {
 		ArrayList<Observation>[] arrayObs = stateObs.getPortalsPositions();
 		
 		if(arrayObs != null) {
-			portalRealPos = arrayObs[0].get(0).position;
-			portalCellPos = calculateCell(portalRealPos, blockSize);
-			stateValues[POSCOMPASS] = compassDirection(portalRealPos, agentPos);
+			portalCellPos = calculateCell(arrayObs[0].get(0).position, blockSize);
+			stateValues[POSCOMPASS] = compassDirection(arrayObs[0].get(0).position, agentPos);
 		} else {
-			if(portalRealPos == null) {
-				stateValues[POSCOMPASS] = NORTH;
-			}
-			else {
-				stateValues[POSCOMPASS] = compassDirection(portalRealPos, agentPos);				
-			}
+			
+			stateValues[POSCOMPASS] = NORTH;
+			portalCellPos = null;
 		}
 		
 		if(stateValues[POSCOMPASS] == State.NORTH || stateValues[POSCOMPASS] == State.SOUTH) {
@@ -320,14 +309,16 @@ public class AgentState extends State {
 		return orientation.equals(new Vector2d(0,1));
 	}
 		
-	public float getDistanceToPortal() {
+	public float getDistanceToPortal(int axis) {
+		float dif;
+		if(axis == 0) {
+			dif = (float) (agentPos.x - portalCellPos.x);
+		}
+		else {
+			dif = (float) (agentPos.y - portalCellPos.y);
+		}
 		
-		float difX = (float) (agentPos.x - portalCellPos.x);
-		float difY = (float) (agentPos.y - portalCellPos.y);
-		
-		return (float) Math.sqrt(difX*difX + difY*difY);
-		
-		// return (float) agentPos.dist(portalPos);
+		return (float) Math.abs(dif);
 	}
 	
 	/**
@@ -353,6 +344,10 @@ public class AgentState extends State {
 	
 	public double getScore() {
 		return score;
+	}
+	
+	public int getCompass() {
+		return compass;
 	}
 
 }

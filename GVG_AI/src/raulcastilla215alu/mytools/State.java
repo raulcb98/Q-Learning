@@ -23,7 +23,7 @@ public class State {
 	private boolean leftDanger;
 	private boolean rightDanger;
 	
-	private int compass;
+	protected int compass;
 	
 	public static final int POSFRONTBLOCK = 0;
 	public static final int POSBACKBLOCK = 1;

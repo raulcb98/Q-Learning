@@ -10,15 +10,15 @@ public class QLearning {
 	private QTable qTable;
 	private float gamma;
 	private float alpha;
-	private static double time = 0;
+	public static double time = 0;
 	private float epsilon;
 	
-	private final float CONSTANT = 70000;
+	private final float CONSTANT = 180000;
 	private final float WINREWARD = 2000f;
-	private final float DEADREWARD = -800f;
+	private final float DEADREWARD = -1000f;
 	private final float STOPREWARD = 0;
-	private final float DISTANCEFACTOR = 400f;
-	private final float GOBACKREWARD = -150f;
+	private final float DISTANCEFACTOR = 200f;
+	private final float GOBACKREWARD = -100f;
 	
 	public QLearning(QTable qTable) {
 		this.qTable = qTable;
@@ -46,9 +46,19 @@ public class QLearning {
 		
 		float finalReward = 0;
 		
+		float currentDistance;
+		float previousDistance;
+		
 		// Distance reward
-		float currentDistance = currentState.getDistanceToPortal();
-		float previousDistance = previousState.getDistanceToPortal();
+		if(currentState.getCompass() == State.EAST || currentState.getCompass() == State.WEST) {
+			currentDistance = currentState.getDistanceToPortal(0);
+			previousDistance = previousState.getDistanceToPortal(0);
+		}
+		else {
+			currentDistance = currentState.getDistanceToPortal(1);
+			previousDistance = previousState.getDistanceToPortal(1);			
+		}
+		
 		float distanceReward = 0;
 		
 		//System.out.println("Current distance = " + currentDistance + " Previous Distance = " + previousDistance);
@@ -91,10 +101,13 @@ public class QLearning {
 	}
 	
 	private void updateConstants() {
-		alpha = (float) (CONSTANT/(CONSTANT + time));
-		epsilon = (float) (CONSTANT/(CONSTANT + time));
+		alpha = (float) (0.9*CONSTANT/(CONSTANT + time));
+		epsilon = (float) (0.9*CONSTANT/(CONSTANT + time));
 		
 		time++;
-		System.out.println("Time = " + time + " Alpha = " + alpha);
+	}
+	
+	public float getAlpha() {
+		return alpha;
 	}
 }

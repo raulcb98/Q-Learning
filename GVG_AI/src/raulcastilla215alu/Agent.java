@@ -14,6 +14,7 @@ import raulcastilla215alu.matrix.QTable;
 import raulcastilla215alu.mytools.AgentState;
 import raulcastilla215alu.mytools.Brain;
 import raulcastilla215alu.mytools.IOModule;
+import raulcastilla215alu.mytools.QLearning;
 import raulcastilla215alu.mytools.StateGenerator;
 import tools.ElapsedCpuTimer;
 import tools.Vector2d;
@@ -74,5 +75,10 @@ public class Agent extends AbstractPlayer {
     public void close() {
     	brain.saveQTable();
     	System.out.println("QTable saved!");
+    	
+    	double time = QLearning.time;
+    	double alpha = brain.getAlpha();
+    	
+		System.out.println("Time = " + time + " Alpha = " + alpha);
     }
 }

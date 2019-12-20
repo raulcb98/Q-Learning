@@ -41,7 +41,7 @@ public class Brain {
 			deadCounter = 0;
 		}
 		
-		if(deadCounter > 1 || !previousState.portalExist()) {
+		if(deadCounter > 1 || !currentState.portalExist() || !previousState.portalExist()) {
 			return ACTIONS.ACTION_NIL;
 		} else {
 			return qLearning.learn(previousState, lastAction, currentState);
@@ -65,4 +65,8 @@ public class Brain {
 		qLearning.saveQTable(savePath);
 	}
 
+	public float getAlpha() {
+		return this.qLearning.getAlpha();
+	}
+	
 }
