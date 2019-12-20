@@ -350,4 +350,8 @@ public class AgentState extends State {
 		return compass;
 	}
 
+	public Vector2d getAgentPos() {
+		return agentPos;
+	}
+
 }

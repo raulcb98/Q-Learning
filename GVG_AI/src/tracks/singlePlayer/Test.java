@@ -37,7 +37,7 @@ public class Test {
 
 		// Game and level to play
 		int gameIdx = 43; //117
-		int levelIdx = 11; // level names from 0 to 4 (game_lvlN.txt).
+		int levelIdx = ; // level names from 0 to 4 (game_lvlN.txt).
 		String gameName = games[gameIdx][1];
 		System.out.println(gameName);
 		String game = games[gameIdx][0];
@@ -71,7 +71,6 @@ public class Test {
 //		for(int i=0; i<N; i++){
 //			level1 = game.replace(gameName, gameName + "_lvl" + levelIdx);
 //			// ArcadeMachine.runGames(game, new String[]{level1}, M, sampleMCTSController, null);
-//			System.out.println("Juego al mapa numero : " + i);
 //			ArcadeMachine.runGames(game, new String[]{level1}, M, miJugador, null);
 //		}
 
