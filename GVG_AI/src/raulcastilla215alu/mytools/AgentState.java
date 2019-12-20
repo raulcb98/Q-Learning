@@ -19,7 +19,8 @@ public class AgentState extends State {
 	 * Private attributes.
 	 */
 	private Vector2d agentPos;
-	private Vector2d portalPos;
+	private Vector2d portalCellPos;
+	private Vector2d portalRealPos;
 	private int blockSize;
 	private int leftRightDangerDistance;
 	private int frontBackDangerDistance;
@@ -55,10 +56,16 @@ public class AgentState extends State {
 		super(obj);
 		this.agentPos = new Vector2d(obj.agentPos);
 		
-		if(obj.portalPos != null) {
-			this.portalPos = new Vector2d(obj.portalPos);
+		if(obj.portalCellPos != null) {
+			this.portalCellPos = new Vector2d(obj.portalCellPos);
 		}  else {
-			this.portalPos = null;
+			this.portalCellPos = null;
+		}
+		
+		if(obj.portalRealPos != null) {
+			this.portalRealPos = new Vector2d(obj.portalRealPos);
+		}  else {
+			this.portalRealPos = null;
 		}
 		
 		this.score = obj.score;
@@ -76,47 +83,63 @@ public class AgentState extends State {
 		score = stateObs.getGameScore();
 		agentDead = isDead(stateObs);
 		
-		ArrayList<Observation>[][] grid = stateObs.getObservationGrid();
-		
-		int x = (int) agentPos.x;
-		int y = (int) agentPos.y;
-		
 		int[] stateValues = new int[9];
-		
-		stateValues[POSFRONTBLOCK] = (isThisCategory(grid[x][y-1], IMMOVABLE) ? 1 : 0);
-		stateValues[POSBACKBLOCK] = (isThisCategory(grid[x][y+1], IMMOVABLE) ? 1 : 0);
-		stateValues[POSLEFTBLOCK] = (isThisCategory(grid[x-1][y], IMMOVABLE) ? 1 : 0);
-		stateValues[POSRIGHTBLOCK] = (isThisCategory(grid[x+1][y], IMMOVABLE) ? 1 : 0);
-		
-		stateValues[POSFRONTDANGER] = (isThisCategory(grid[x][y-1], MOVABLE) ? 1 : 0);
-		stateValues[POSBACKDANGER] = (isThisCategory(grid[x][y+1], MOVABLE) ? 1 : 0);
-		stateValues[POSLEFTDANGER] = (isThisCategory(grid[x-1][y], MOVABLE) ? 1 : 0);
-		stateValues[POSRIGHTDANGER] = (isThisCategory(grid[x+1][y], MOVABLE) ? 1 : 0);
 
-		Vector2d frontAgentPos = new Vector2d();
-		frontAgentPos.set(agentPos.x, agentPos.y-1);
+		for(int i = 0;i < stateValues.length ; i++) {
+			stateValues[i] = 0;
+		}
 		
-		Vector2d backAgentPos = new Vector2d();
-		backAgentPos.set(agentPos.x, agentPos.y+1);
-		
-		if(stateValues[POSFRONTDANGER] == 0)
-			stateValues[POSFRONTDANGER] = (inDanger(grid, frontAgentPos, frontBackDangerDistance) ? 1 : 0);
-		
-		if(stateValues[POSBACKDANGER] == 0)
-			stateValues[POSBACKDANGER] = (inDanger(grid, backAgentPos, frontBackDangerDistance) ? 1 : 0);
-		
-		if(stateValues[POSLEFTDANGER] == 0)
-			stateValues[POSLEFTDANGER] = (inDanger(grid, agentPos, LEFT, leftRightDangerDistance) ? 1 : 0);
-		
-		if(stateValues[POSRIGHTDANGER] == 0)
-			stateValues[POSRIGHTDANGER] = (inDanger(grid, agentPos, RIGHT, leftRightDangerDistance) ? 1 : 0);
-		
+		//Percieve compass
 		ArrayList<Observation>[] arrayObs = stateObs.getPortalsPositions();
+		
 		if(arrayObs != null) {
-			portalPos = calculateCell(arrayObs[0].get(0).position, blockSize);
-			stateValues[POSCOMPASS] = compassDirection(arrayObs[0].get(0).position, agentPos);
+			portalRealPos = arrayObs[0].get(0).position;
+			portalCellPos = calculateCell(portalRealPos, blockSize);
+			stateValues[POSCOMPASS] = compassDirection(portalRealPos, agentPos);
 		} else {
-			stateValues[POSCOMPASS] = NORTH;
+			if(portalRealPos == null) {
+				stateValues[POSCOMPASS] = NORTH;
+			}
+			else {
+				stateValues[POSCOMPASS] = compassDirection(portalRealPos, agentPos);				
+			}
+		}
+		
+		if(stateValues[POSCOMPASS] == State.NORTH || stateValues[POSCOMPASS] == State.SOUTH) {
+			
+			ArrayList<Observation>[][] grid = stateObs.getObservationGrid();
+			
+			int x = (int) agentPos.x;
+			int y = (int) agentPos.y;
+				
+			stateValues[POSFRONTBLOCK] = (isThisCategory(grid[x][y-1], IMMOVABLE) ? 1 : 0);
+			stateValues[POSBACKBLOCK] = (isThisCategory(grid[x][y+1], IMMOVABLE) ? 1 : 0);
+			stateValues[POSLEFTBLOCK] = (isThisCategory(grid[x-1][y], IMMOVABLE) ? 1 : 0);
+			stateValues[POSRIGHTBLOCK] = (isThisCategory(grid[x+1][y], IMMOVABLE) ? 1 : 0);
+			
+			stateValues[POSFRONTDANGER] = (isThisCategory(grid[x][y-1], MOVABLE) ? 1 : 0);
+			stateValues[POSBACKDANGER] = (isThisCategory(grid[x][y+1], MOVABLE) ? 1 : 0);
+			stateValues[POSLEFTDANGER] = (isThisCategory(grid[x-1][y], MOVABLE) ? 1 : 0);
+			stateValues[POSRIGHTDANGER] = (isThisCategory(grid[x+1][y], MOVABLE) ? 1 : 0);
+	
+			Vector2d frontAgentPos = new Vector2d();
+			frontAgentPos.set(agentPos.x, agentPos.y-1);
+			
+			Vector2d backAgentPos = new Vector2d();
+			backAgentPos.set(agentPos.x, agentPos.y+1);
+			
+			if(stateValues[POSFRONTDANGER] == 0)
+				stateValues[POSFRONTDANGER] = (inDanger(grid, frontAgentPos, frontBackDangerDistance) ? 1 : 0);
+			
+			if(stateValues[POSBACKDANGER] == 0)
+				stateValues[POSBACKDANGER] = (inDanger(grid, backAgentPos, frontBackDangerDistance) ? 1 : 0);
+			
+			if(stateValues[POSLEFTDANGER] == 0)
+				stateValues[POSLEFTDANGER] = (inDanger(grid, agentPos, LEFT, leftRightDangerDistance) ? 1 : 0);
+			
+			if(stateValues[POSRIGHTDANGER] == 0)
+				stateValues[POSRIGHTDANGER] = (inDanger(grid, agentPos, RIGHT, leftRightDangerDistance) ? 1 : 0);
+			
 		}
 		
 		ArrayList<Integer> arrayStateValues = new ArrayList<>();
@@ -254,30 +277,11 @@ public class AgentState extends State {
 	private int compassDirection(Vector2d portalPos, Vector2d agentPos) {
 		
 		Vector2d portalBlockPos = calculateCell(portalPos, blockSize);
-		/*
-		int modX = (int) (portalBlockPos.x - agentPos.x);
-		int modY = (int) (portalBlockPos.y - agentPos.y);
-		
-		if(Math.abs(modY) > Math.abs(modX)) {
-			if(modY < 0) {
-				return NORTH;
-			} else {
-				return SOUTH;
-			}
-		} else {
-			if(modX < 0) {
-				return EAST;
-			} else {
-				return WEST;
-			}
-		}
-		*/
-		
+
 		if(portalBlockPos.y < agentPos.y) return NORTH;
 		if(portalBlockPos.y > agentPos.y) return SOUTH;	
-		if(portalBlockPos.x < agentPos.x) return EAST;
+		if(portalBlockPos.x <= agentPos.x) return EAST;
 		if(portalBlockPos.x > agentPos.x) return WEST;
-		
 		
 		return NORTH;
 
@@ -318,8 +322,8 @@ public class AgentState extends State {
 		
 	public float getDistanceToPortal() {
 		
-		float difX = (float) (agentPos.x - portalPos.x);
-		float difY = (float) (agentPos.y - portalPos.y);
+		float difX = (float) (agentPos.x - portalCellPos.x);
+		float difY = (float) (agentPos.y - portalCellPos.y);
 		
 		return (float) Math.sqrt(difX*difX + difY*difY);
 		
@@ -344,7 +348,7 @@ public class AgentState extends State {
 	}
 	
 	public boolean portalExist() {
-		return portalPos != null;
+		return portalCellPos != null;
 	}
 	
 	public double getScore() {

@@ -24,7 +24,7 @@ public class StateGenerator {
 		ArrayList<ArrayList<Integer>> combStates = combnk(8, values);
 		filterStates(combStates);
 		
-		int[] compassValues = {State.NORTH, State.SOUTH, State.EAST, State.WEST};
+		int[] compassValues = {State.NORTH, State.SOUTH};
 		
 		ArrayList<State> output = new ArrayList<State>();
 		ArrayList<Integer> aux;
@@ -36,8 +36,26 @@ public class StateGenerator {
 				output.add(new State(aux));
 			}
 		}
-			
+		
+		aux = zeros(8);
+		aux.add(State.EAST);
+		output.add(new State(aux));
+		
+		aux = zeros(8);
+		aux.add(State.WEST);
+		output.add(new State(aux));
+		
 		return output;			
+	}
+	
+	private static ArrayList<Integer> zeros(int length){
+		ArrayList<Integer> aux = new ArrayList<>();
+		
+		for(int i =0;i < length;i++) {
+			aux.add(0);
+		}
+		
+		return aux;
 	}
 	
 	/**
