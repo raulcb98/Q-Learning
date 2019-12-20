@@ -37,7 +37,7 @@ public class Test {
 
 		// Game and level to play
 		int gameIdx = 43; //117
-		int levelIdx = ; // level names from 0 to 4 (game_lvlN.txt).
+		int levelIdx = 10; // level names from 0 to 4 (game_lvlN.txt).
 		String gameName = games[gameIdx][1];
 		System.out.println(gameName);
 		String game = games[gameIdx][0];

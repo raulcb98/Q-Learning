@@ -73,7 +73,12 @@ public class QLearning {
 		
 		// Dead reward
 		if(currentState.isAgentDead()) {
-			finalReward += DEADREWARD;
+			if(currentState.getCompass() == State.SOUTH) {
+				finalReward += DEADREWARD * 4;
+			}
+			else {
+				finalReward += DEADREWARD;
+			}
 		}
 		
 		// Win reward

@@ -49,13 +49,13 @@ public class Brain {
 	}
 	
 	public ACTIONS act(StateObservation stateObs) {
-		
-		currentState.perceive(stateObs);;
+
+		currentState.perceive(stateObs);
         int ticks = stateObs.getGameTick();
         IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
 		
 		currentState.perceive(stateObs);
-		if(currentState.portalExist())
+		if(currentState.portalExist() && !currentState.isAgentDead())
 			return qTable.getBestAction(currentState);
 		else
 			return ACTIONS.ACTION_NIL; 
