@@ -5,8 +5,8 @@ import java.util.ArrayList;
 /**
  * Generates all possible and logical agent state.
  * 
- * @author Ricardo Manuel Ruiz Díaz.
- * @author Raúl Castilla Bravo.
+ * @author Ricardo Manuel Ruiz Diaz.
+ * @author Raul Castilla Bravo.
  */
 public class StateGenerator {
 	

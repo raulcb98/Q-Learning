@@ -9,8 +9,8 @@ import tools.Vector2d;
 /**
  * Defines an agent state.
  * 
- * @author Raúl Castilla Bravo.
- * @author Ricardo Manuel Ruiz Díaz.
+ * @author Raul Castilla Bravo.
+ * @author Ricardo Manuel Ruiz Diaz.
  *
  */
 public class AgentState extends State {

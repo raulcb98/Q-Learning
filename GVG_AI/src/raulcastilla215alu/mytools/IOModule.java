@@ -6,8 +6,8 @@ import java.io.PrintWriter;
 /**
  * Defines an input-output module.
  * 
- * @author Ricardo Manuel Ruiz Díaz.
- * @author Raúl Castilla Bravo.
+ * @author Ricardo Manuel Ruiz Diaz.
+ * @author Raul Castilla Bravo.
  */
 public class IOModule {
 

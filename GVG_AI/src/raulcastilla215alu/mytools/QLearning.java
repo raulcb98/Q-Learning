@@ -16,7 +16,8 @@ public class QLearning {
 	private final float CONSTANT = 180000;
 	private final float WINREWARD = 2000f;
 	private final float DEADREWARD = -1000f;
-	private final float STOPREWARD = -20;
+	private final float STOPREWARD = 0;
+//	private final float STOPREWARD = -20;
 	private final float DISTANCEFACTOR = 200f;
 	private final float GOBACKREWARD = -100f;
 	

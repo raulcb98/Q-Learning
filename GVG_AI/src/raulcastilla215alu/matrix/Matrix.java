@@ -12,10 +12,10 @@ import com.opencsv.CSVReader;
 import raulcastilla215alu.mytools.IOModule;
 
 /**
- * Lee un archivo CSV y almacena la información
+ * Lee un archivo CSV y almacena la informacion
  * en una matriz.
  * 
- * @author Raúl Castilla Bravo.
+ * @author Raul Castilla Bravo.
  */
 public class Matrix {
 
@@ -25,15 +25,15 @@ public class Matrix {
 	protected ArrayList<ArrayList<String>> matrix;
 	
 	/**
-	 * Constructor. Genera una matriz vacía.
+	 * Constructor. Genera una matriz vacia.
 	 */
 	public Matrix() {
 		this.matrix = new ArrayList<>();
 	}
 	
 	/**
-	 * Constructor. Crea la matriz y la inicializa con la información
-	 * del archivo CSV de la ruta pasada por parámetro.
+	 * Constructor. Crea la matriz y la inicializa con la informacion
+	 * del archivo CSV de la ruta pasada por parametro.
 	 * 
 	 * @param path Ruta a un archivo CSV.
 	 */
@@ -44,12 +44,12 @@ public class Matrix {
 	}
 	
 	/**
-	 * Constructor. Crea la matriz y la inicializa con la información
-	 * del archivo CSV de la ruta pasada por parámetro. Si removeHeader
+	 * Constructor. Crea la matriz y la inicializa con la informacion
+	 * del archivo CSV de la ruta pasada por parametro. Si removeHeader
 	 * es true, se elimina la cabecera del csv.
 	 * 
 	 * @param path Ruta a un archivo CSV.
-	 * @param sep Caracter de separación del fichero csv.
+	 * @param sep Caracter de separacion del fichero csv.
 	 */
 	public Matrix(String path, char sep) {
 		this.matrix = new ArrayList<>();
@@ -62,7 +62,7 @@ public class Matrix {
 	}
 	
 	/**
-	 * Lee el archivo CSV de la ruta pasada por parámetro y lo
+	 * Lee el archivo CSV de la ruta pasada por parametro y lo
 	 * carga en la matriz de la clase.
 	 * 
 	 * @param path Ruta a un archivo CSV.
@@ -80,7 +80,7 @@ public class Matrix {
 			csvReader = new CSVReader(reader, sep);
 			List<String[]> records = csvReader.readAll();
 			
-			// Por cada fila leída...
+			// Por cada fila leida...
 			ArrayList<String> aux_row = null;
 			for(int i = 0; i < records.size(); i++) {
 				aux_row = new ArrayList<>();
@@ -91,7 +91,7 @@ public class Matrix {
 					aux_row.add(row[j]);
 				}
 				
-				// Incluímos la nueva fila en la matriz
+				// Incluimos la nueva fila en la matriz
 				matrix.add(aux_row);
 			}
 			
@@ -129,11 +129,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva fila en la matriz en la posición 
-	 * indicada por parámetro desplazando hacia abajo
-	 * la fila de dicha posición.
+	 * Añade una nueva fila en la matriz en la posicion 
+	 * indicada por parametro desplazando hacia abajo
+	 * la fila de dicha posicion.
 	 * 
-	 * @param index Posición en la que añadir la fila.
+	 * @param index Posicion en la que añadir la fila.
 	 * @param row Fila a añadir.
 	 */
 	protected void addRow(int index, ArrayList<String> row) {
@@ -182,10 +182,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva columna a la matriz en la posición indicada
-	 * por parámetro desplazando a la derecha la columna de dicha posición.
+	 * Añade una nueva columna a la matriz en la posicion indicada
+	 * por parametro desplazando a la derecha la columna de dicha posicion.
 	 * 
-	 * @param index índice de la columna a añadir.
+	 * @param index indice de la columna a añadir.
 	 * @param newColumn Columna a añadir.
 	 */
 	protected void addColumn(int index, ArrayList<String> column) {
@@ -215,16 +215,16 @@ public class Matrix {
 	
 	
 	/**
-	 * Elimina la fila indicada en el índice.
-	 * @param indexRow Índice de la fila a eliminar.
+	 * Elimina la fila indicada en el indice.
+	 * @param indexRow indice de la fila a eliminar.
 	 */
 	protected void removeRow(int indexRow) {
 		this.matrix.remove(indexRow);
 	}
 	
 	/**
-	 * Elimina la columna indicada en el índice.
-	 * @param indexColumn Índice de la columna a eliminar.
+	 * Elimina la columna indicada en el indice.
+	 * @param indexColumn indice de la columna a eliminar.
 	 */
 	protected void removeColumn(int indexColumn) {
 		for(int indexRow = 0; indexRow < matrix.size(); indexRow++) {
@@ -235,8 +235,8 @@ public class Matrix {
 	/**
 	 * Establece el valor de una celda concreta
 	 * 
-	 * @param row índice de la fila a modificar.
-	 * @param column índice de la columna a modificar.
+	 * @param row indice de la fila a modificar.
+	 * @param column indice de la columna a modificar.
 	 * @param element elemento a introducir en la celda
 	 */
 	protected void set(int row, int column, String element) {
@@ -278,10 +278,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve la fila indicada en el índice.
+	 * Devuelve la fila indicada en el indice.
 	 * 
-	 * @param row Índice de fila.
-	 * @return Fila indicada en el índice.
+	 * @param row indice de fila.
+	 * @return Fila indicada en el indice.
 	 */
 	@SuppressWarnings("unchecked")
 	protected ArrayList<String> getRow(int row){
@@ -292,10 +292,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve la columna indicada en el índice.
+	 * Devuelve la columna indicada en el indice.
 	 * 
-	 * @param column Índice de columna.
-	 * @return Columna indicada en el índice.
+	 * @param column indice de columna.
+	 * @return Columna indicada en el indice.
 	 */
 	protected ArrayList<String> getColumn(int column){
 		if(matrix.isEmpty()) {
@@ -310,10 +310,10 @@ public class Matrix {
 	}
 		
 	/**
-	 * Devuelve la matriz de datos como matriz de números
+	 * Devuelve la matriz de datos como matriz de numeros
 	 * reales. 
 	 * 
-	 * @return Devuelve la matriz de datos como matriz de números
+	 * @return Devuelve la matriz de datos como matriz de numeros
 	 * reales. 
 	 */
 	protected double[][] castStr2Double(){
@@ -330,9 +330,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * Convierte un array de strings en un array de valores numéricos reales.
+	 * Convierte un array de strings en un array de valores numericos reales.
 	 * @param array Array de strings.
-	 * @return Array de valores numéricos reales.
+	 * @return Array de valores numericos reales.
 	 */
 	protected static double[] castStr2Double(ArrayList<String> array) {
 		double[] doubleArray = new double[array.size()];
@@ -344,7 +344,7 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve un String con la información almacenada en 
+	 * Devuelve un String con la informacion almacenada en 
 	 * la matriz.
 	 */
 	@Override
