@@ -76,7 +76,7 @@ public class AgentState extends State {
 		score = stateObs.getGameScore();
 		agentDead = isDead(stateObs);
 		
-		int[] stateValues = new int[9];
+		int[] stateValues = new int[10];
 
 		for(int i = 0;i < stateValues.length ; i++) {
 			stateValues[i] = 0;
@@ -111,6 +111,8 @@ public class AgentState extends State {
 			stateValues[POSLEFTDANGER] = (isThisCategory(grid[x-1][y], MOVABLE) ? 1 : 0);
 			stateValues[POSRIGHTDANGER] = (isThisCategory(grid[x+1][y], MOVABLE) ? 1 : 0);
 	
+			stateValues[POSORACLE] = getOraclePrediction(grid, stateValues);
+			
 			Vector2d frontAgentPos = new Vector2d();
 			frontAgentPos.set(agentPos.x, agentPos.y-1);
 			
@@ -319,6 +321,66 @@ public class AgentState extends State {
 		}
 		
 		return (float) Math.abs(dif);
+	}
+	
+	
+	private int getOraclePrediction(ArrayList<Observation>[][] grid, int[] stateValues) {
+		int posX = (int) agentPos.x;
+		int posY = (int) agentPos.y;
+		
+		if(stateValues[POSFRONTBLOCK]==0 && stateValues[POSCOMPASS] == State.NORTH) { return State.NONEHOLE;}
+		if(stateValues[POSBACKBLOCK]==0 && stateValues[POSCOMPASS] == State.SOUTH) { return State.NONEHOLE;}
+		
+		int minColumn = -1;
+		int maxColumn = -1;
+		
+		ArrayList<Observation> aux;
+		int indexColumn = posX;
+		
+		// Left search
+		while(minColumn == -1) {
+			if(isThisCategory(grid[indexColumn][posY], IMMOVABLE)) {
+				minColumn = indexColumn;
+			} else {
+				indexColumn--;
+			}
+		}
+		
+		// Right search
+		indexColumn = posX;
+		while(maxColumn == -1) {
+			if(isThisCategory(grid[indexColumn][posY], IMMOVABLE)) {
+				maxColumn = indexColumn;
+			} else {
+				indexColumn++;
+			}
+		}
+		
+		// Row of interest
+		int indexRow = posY-1; // By default NORTH
+		if(stateValues[POSCOMPASS] == State.SOUTH) {
+			indexRow = posY+1;
+		}
+		
+		// Search hole
+		int posHole = -1;
+		double minDistance = 1000000;
+		double currentDistance;
+		for(int i = minColumn+1; i < maxColumn; i++) {
+			aux = grid[i][indexRow];
+			if(!isThisCategory(aux, IMMOVABLE)) {
+				
+				currentDistance = agentPos.dist(i,indexRow);
+				if(currentDistance < minDistance) {
+					posHole = i;
+					minDistance = currentDistance;
+				}
+			}
+		}
+		
+		// Hole orientation
+		if(posHole < posX) return State.LEFTHOLE;
+		return State.RIGHTHOLE;
 	}
 	
 	/**

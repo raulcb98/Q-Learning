@@ -25,7 +25,7 @@ public class Test {
         String sampleRHEAController = "tracks.singlePlayer.advanced.sampleRHEA.Agent";
 		String sampleOLETSController = "tracks.singlePlayer.advanced.olets.Agent";
 
-		String miJugador = "raulcastilla215alu.Agent";
+		String miJugador = "raulcastilla215alu.MyAgent";
 		
 		//Load available games
 		String spGamesCollection =  "examples/all_games_sp.csv";
@@ -37,13 +37,14 @@ public class Test {
 
 		// Game and level to play
 		int gameIdx = 43; //117
-		int levelIdx = 10; // level names from 0 to 4 (game_lvlN.txt).
+		int levelIdx = 6; // level names from 0 to 4 (game_lvlN.txt).
 		String gameName = games[gameIdx][1];
 		System.out.println(gameName);
 		String game = games[gameIdx][0];
 		String level1 = game.replace(gameName, gameName + "_lvl" + levelIdx);
 
-		String recordActionsFile = "./SaveGames/actions_" + games[gameIdx][1] + "_lvl" + Integer.toString(levelIdx) + "_" + Integer.toString(seed) + ".txt";
+		String recordActionsFile = null;
+//		String recordActionsFile = "./SaveGames/actions_" + games[gameIdx][1] + "_lvl" + Integer.toString(levelIdx) + "_" + Integer.toString(seed) + ".txt";
 						//"actions_" + "freeway" + "_lvl" + Integer.toString(levelIdx) + "_" + Integer.toString(seed) + ".txt";
 						//null
 						// where to record the actions
@@ -58,14 +59,14 @@ public class Test {
 
 
 		// 3. This replays a game from an action file previously recorded
-//		 String name = "actions_freeway_lvl0_-284822000";
+//		 String name = "actions_freeway_lvl0_-799257440";
 //		 String readActionsFile = "./SaveGames/" + name + ".txt";
 //		 ArcadeMachine.replayGame(game, level1, visuals, readActionsFile);
 
 		// 4. This plays a single game, in N levels, M times :
 		//String level2 = new String(game).replace(gameName, gameName + "_lvl" + 1);
 //		int M = 500;
-//		int N = 11;
+//		int N = 4;
 //		game = games[gameIdx][0];
 //		gameName = games[gameIdx][1];
 //		for(int i=0; i<N; i++){

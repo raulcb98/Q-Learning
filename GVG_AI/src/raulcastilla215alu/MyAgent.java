@@ -63,11 +63,11 @@ public class MyAgent extends AbstractPlayer {
      * @return An action for the current state
      */
     public Types.ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
-        
+    	
 //    	for(int i = 0; i < 100000; i++) {
 //    		System.out.println("");
 //    	}
-    	        
+    	
     	return brain.act(stateObs);
 //    	return brain.learn(stateObs);
     }

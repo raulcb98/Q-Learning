@@ -24,6 +24,7 @@ public class State {
 	private boolean rightDanger;
 	
 	protected int compass;
+	protected int oracle; 
 	
 	public static final int POSFRONTBLOCK = 0;
 	public static final int POSBACKBLOCK = 1;
@@ -33,12 +34,18 @@ public class State {
 	public static final int POSBACKDANGER = 5;
 	public static final int POSLEFTDANGER = 6;
 	public static final int POSRIGHTDANGER = 7;
-	public static final int POSCOMPASS = 8;
+	public static final int POSORACLE = 8;
+	public static final int POSCOMPASS = 9;
+
 	
 	public static final int NORTH = 0;
 	public static final int SOUTH = 1; 
 	public static final int EAST = 2;
 	public static final int WEST = 3;
+	
+	public static final int NONEHOLE = 0;
+	public static final int LEFTHOLE = 1;
+	public static final int RIGHTHOLE = 2;
 	
 	/**
 	 * Default constructor.
@@ -59,6 +66,7 @@ public class State {
 		this.rightDanger = obj.rightDanger;
 		
 		this.compass = obj.compass;
+		this.oracle = obj.oracle;
 	}
 	
 	/**
@@ -85,6 +93,7 @@ public class State {
 		rightDanger = (array.get(POSRIGHTDANGER) == 0 ? false : true);	
 		
 		compass = array.get(POSCOMPASS);
+		oracle = array.get(POSORACLE);
 	}
 	
 	/**
@@ -101,7 +110,8 @@ public class State {
 				 this.backDanger == aux.backDanger &&
 				 this.leftDanger == aux.leftDanger &&
 				 this.rightDanger == aux.rightDanger &&
-				 this.compass == aux.compass);
+				 this.compass == aux.compass &&
+				 this.oracle == aux.oracle);
 	}
 
 	/**
@@ -127,7 +137,15 @@ public class State {
 			case EAST: str += "East"; break;
 			case WEST: str += "West"; break;
 		}
+		
+		str += "\noracle = ";
 
+		switch (oracle) {
+		case NONEHOLE: str += "None"; break;
+		case LEFTHOLE: str += "left"; break;
+		case RIGHTHOLE: str += "right"; break;
+	}
+		
 		return str;
 	}
 }

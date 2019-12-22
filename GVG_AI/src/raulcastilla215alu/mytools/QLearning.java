@@ -13,13 +13,13 @@ public class QLearning {
 	public static double time = 0;
 	private float epsilon;
 	
-	private final float CONSTANT = 180000;
+	private final float CONSTANT = 80000;
 	private final float WINREWARD = 2000f;
 	private final float DEADREWARD = -1000f;
 	private final float STOPREWARD = 0;
 //	private final float STOPREWARD = -20;
 	private final float DISTANCEFACTOR = 200f;
-	private final float GOBACKREWARD = -100f;
+	private final float GOBACKREWARD = 0f;
 	
 	public QLearning(QTable qTable) {
 		this.qTable = qTable;

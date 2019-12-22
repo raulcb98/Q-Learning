@@ -44,6 +44,8 @@ public class Brain {
 		if(deadCounter > 1 || !currentState.portalExist() || !previousState.portalExist()) {
 			return ACTIONS.ACTION_NIL;
 		} else {
+	        int ticks = stateObs.getGameTick();
+	        //IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
 			return qLearning.learn(previousState, lastAction, currentState);
 		}
 	}
@@ -52,7 +54,7 @@ public class Brain {
 
 		currentState.perceive(stateObs);
         int ticks = stateObs.getGameTick();
-        IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
+        //IOModule.write("./History.txt", ticks + "\n" + currentState.toString(), true);
 		
 		currentState.perceive(stateObs);
 		if(currentState.portalExist() && !currentState.isAgentDead())

@@ -14,7 +14,7 @@ public class StateGenerator {
 	 * Generates all possible and logical agent state.
 	 * @return An array of states.
 	 */
-	@SuppressWarnings("unchecked")
+	
 	public static ArrayList<State> generate() {
 		int[] values = new int[2];
 		values[0] = 0;
@@ -22,30 +22,57 @@ public class StateGenerator {
 		
 		// Generation and filtering states without compass
 		ArrayList<ArrayList<Integer>> combStates = combnk(8, values);
+			
+		int[] oracleValues = {State.NONEHOLE, State.LEFTHOLE, State.RIGHTHOLE};
+		combStates = addInteger2Combination(combStates, oracleValues);
+		
 		filterStates(combStates);
 		
 		int[] compassValues = {State.NORTH, State.SOUTH};
+		ArrayList<State> output = addInteger2States(combStates, compassValues);
 		
-		ArrayList<State> output = new ArrayList<State>();
 		ArrayList<Integer> aux;
-		
-		for(int indexCompass = 0; indexCompass < compassValues.length; indexCompass++) {
-			for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
-				aux = (ArrayList<Integer>) combStates.get(indexArray).clone();
-				aux.add(compassValues[indexCompass]);
-				output.add(new State(aux));
-			}
-		}
-		
-		aux = zeros(8);
+		aux = zeros(9);
 		aux.add(State.EAST);
 		output.add(new State(aux));
 		
-		aux = zeros(8);
+		aux = zeros(9);
 		aux.add(State.WEST);
 		output.add(new State(aux));
 		
 		return output;			
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static ArrayList<ArrayList<Integer>> addInteger2Combination(ArrayList<ArrayList<Integer>> combStates, int[] values) {
+		ArrayList<ArrayList<Integer>> output = new ArrayList<ArrayList<Integer>>();
+		ArrayList<Integer> aux;
+		
+		for(int indexValues = 0; indexValues < values.length; indexValues++) {
+			for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
+				aux = (ArrayList<Integer>) combStates.get(indexArray).clone();
+				aux.add(values[indexValues]);
+				output.add(aux);
+			}
+		}
+		
+		return output;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static ArrayList<State> addInteger2States(ArrayList<ArrayList<Integer>> combStates, int[] values) {
+		ArrayList<State> output = new ArrayList<State>();
+		ArrayList<Integer> aux;
+		
+		for(int indexValues = 0; indexValues < values.length; indexValues++) {
+			for(int indexArray = 0; indexArray < combStates.size(); indexArray++) {
+				aux = (ArrayList<Integer>) combStates.get(indexArray).clone();
+				aux.add(values[indexValues]);
+				output.add(new State(aux));
+			}
+		}
+		
+		return output;
 	}
 	
 	private static ArrayList<Integer> zeros(int length){
@@ -127,11 +154,17 @@ public class StateGenerator {
 		boolean leftDanger = (comb.get(State.POSLEFTDANGER) == 0 ? false : true);
 		boolean rightDanger = (comb.get(State.POSRIGHTDANGER) == 0 ? false : true);
 		
+		int oracle = comb.get(State.POSORACLE);
+		
 		if(frontBlock && backBlock && leftBlock && rightBlock) return false;
 		//if(leftDanger && rightDanger) return false;
 		//if((leftDanger || rightDanger) && (leftBlock || rightBlock)) return false;
 		if(frontDanger && frontBlock) return false;
 		if(backDanger && backBlock) return false;
+		if(!frontBlock && !backBlock && oracle != State.NONEHOLE) return false;
+		if(rightBlock && oracle == State.RIGHTHOLE) return false;
+		if(leftBlock && oracle == State.LEFTHOLE) return false;		
+		
 		
 		return true;	
 	}
