@@ -91,7 +91,7 @@ public class AgentState extends State {
 		} else {
 			
 			stateValues[POSCOMPASS] = NORTH;
-			portalCellPos = null;
+			//portalCellPos = null;
 		}
 		
 		if(stateValues[POSCOMPASS] == State.NORTH || stateValues[POSCOMPASS] == State.SOUTH) {
@@ -379,6 +379,7 @@ public class AgentState extends State {
 		}
 		
 		// Hole orientation
+		if(posHole == -1) return State.NONEHOLE;
 		if(posHole < posX) return State.LEFTHOLE;
 		return State.RIGHTHOLE;
 	}
