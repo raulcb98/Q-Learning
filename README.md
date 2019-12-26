@@ -4,6 +4,7 @@ The goal of this project is investigate, implement and analize the Q-Learning Re
 
 Our personal video explanation:
 - https://www.youtube.com/watch?v=DcPKtU-bY6o&
+- https://youtu.be/TQMTJ1JBWoU
 
 More documentation:
 - https://es.wikipedia.org/wiki/Q-learning 
