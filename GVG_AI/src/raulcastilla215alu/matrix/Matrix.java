@@ -12,30 +12,30 @@ import com.opencsv.CSVReader;
 import raulcastilla215alu.mytools.IOModule;
 
 /**
- * Lee un archivo CSV y almacena la informacion
- * en una matriz.
+ * Read a CSV file and store the information into a matrix.
  * 
  * @author Raul Castilla Bravo.
+ * @author Ricardo Manuel Ruiz Diaz.
  */
 public class Matrix {
 
 	/*
-	 * Atributos privados
+	 * Privates attributes.
 	 */
 	protected ArrayList<ArrayList<String>> matrix;
 	
 	/**
-	 * Constructor. Genera una matriz vacia.
+	 * Constructor. Generate an empty matrix.
 	 */
 	public Matrix() {
 		this.matrix = new ArrayList<>();
 	}
 	
 	/**
-	 * Constructor. Crea la matriz y la inicializa con la informacion
-	 * del archivo CSV de la ruta pasada por parametro.
+	 * Constructor. Initializes the matrix using the information from the 
+	 * CSV file introduced by parameters.
 	 * 
-	 * @param path Ruta a un archivo CSV.
+	 * @param path CSV file path.
 	 */
 	public Matrix(String path) {
 		this.matrix = new ArrayList<>();
@@ -44,12 +44,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Constructor. Crea la matriz y la inicializa con la informacion
-	 * del archivo CSV de la ruta pasada por parametro. Si removeHeader
-	 * es true, se elimina la cabecera del csv.
+	 * Constructor. Initializes the matrix using the information from the 
+	 * CSV file introduced by parameters.
 	 * 
-	 * @param path Ruta a un archivo CSV.
-	 * @param sep Caracter de separacion del fichero csv.
+	 * @param path CSV file path.
+	 * @param sep column separator.
 	 */
 	public Matrix(String path, char sep) {
 		this.matrix = new ArrayList<>();
@@ -57,15 +56,20 @@ public class Matrix {
 		readCSV(path, sep);
 	}
 	
+	/**
+	 * Saves matrix information into a CSV file.
+	 * 
+	 * @param path CSV file path.
+	 */
 	public void toCSV(String path) {
 		IOModule.write(path, this.toString(), false);
 	}
 	
 	/**
-	 * Lee el archivo CSV de la ruta pasada por parametro y lo
-	 * carga en la matriz de la clase.
+	 * Read a CSV file from path introduced by parameters and 
+	 * store into the matrix.
 	 * 
-	 * @param path Ruta a un archivo CSV.
+	 * @param path CSV file path.
 	 */
 	@SuppressWarnings("deprecation")
 	protected void readCSV(String path, char sep) {
@@ -109,8 +113,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva fila a la matriz.
-	 * @param newRow Fila a añadir.
+	 * Add a new row to the matrix.
+	 * 
+	 * @param newRow row to be added.
 	 */
 	protected void addRow(ArrayList<String> row) {
 		try {
@@ -129,12 +134,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva fila en la matriz en la posicion 
-	 * indicada por parametro desplazando hacia abajo
-	 * la fila de dicha posicion.
+	 * Add a new row to the matrix in the position specified by parameter 
+	 * and displace down the others rows.
 	 * 
-	 * @param index Posicion en la que añadir la fila.
-	 * @param row Fila a añadir.
+	 * @param index Row position.
+	 * @param row row to be added.
 	 */
 	protected void addRow(int index, ArrayList<String> row) {
 		try {
@@ -153,8 +157,9 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva columna a la matriz.
-	 * @param newColumn Columna a añadir.
+	 * Add a new column to the matrix.
+	 * 
+	 * @param newColumn Column to be added.
 	 */
 	protected void addColumn(ArrayList<String> column) {
 		
@@ -182,11 +187,11 @@ public class Matrix {
 	}
 	
 	/**
-	 * Añade una nueva columna a la matriz en la posicion indicada
-	 * por parametro desplazando a la derecha la columna de dicha posicion.
+	 * Add a new column to the matrix in the position specified by parameter
+	 * and displace right other columns.
 	 * 
-	 * @param index indice de la columna a añadir.
-	 * @param newColumn Columna a añadir.
+	 * @param index Column index.
+	 * @param newColumn Column to be added.
 	 */
 	protected void addColumn(int index, ArrayList<String> column) {
 		
@@ -215,16 +220,18 @@ public class Matrix {
 	
 	
 	/**
-	 * Elimina la fila indicada en el indice.
-	 * @param indexRow indice de la fila a eliminar.
+	 * Remove the row specified by index.
+	 * 
+	 * @param indexRow row index.
 	 */
 	protected void removeRow(int indexRow) {
 		this.matrix.remove(indexRow);
 	}
 	
 	/**
-	 * Elimina la columna indicada en el indice.
-	 * @param indexColumn indice de la columna a eliminar.
+	 * Removve the column specified by index.
+	 * 
+	 * @param indexColumn index column.
 	 */
 	protected void removeColumn(int indexColumn) {
 		for(int indexRow = 0; indexRow < matrix.size(); indexRow++) {
@@ -233,31 +240,31 @@ public class Matrix {
 	}
 		
 	/**
-	 * Establece el valor de una celda concreta
+	 * Set cell value.
 	 * 
-	 * @param row indice de la fila a modificar.
-	 * @param column indice de la columna a modificar.
-	 * @param element elemento a introducir en la celda
+	 * @param row row index.
+	 * @param column column index.
+	 * @param element element to insert.
 	 */
 	protected void set(int row, int column, String element) {
 		this.matrix.get(row).set(column, element);
 	}
 	
 	/**
-	 * Devuelve el valor almacenado en la fila y columna
-	 * indicados.
+	 * Get cell value.
 	 * 
-	 * @param row Fila a indexar. 
-	 * @param column Columna a indexar.
-	 * @return Valor situado en la fila y columna indicadas.
+	 * @param row row index. 
+	 * @param column column index.
+	 * @return cell value.
 	 */
 	protected String get(int row, int column) {
 		return this.matrix.get(row).get(column);
 	}
 	
 	/**
-	 * Devuelve el ancho de la matriz.
-	 * @return Ancho de la matriz.
+	 * Get matrix width.
+	 * 
+	 * @return matrix width.
 	 */
 	protected int getWidth() {
 		if(matrix.isEmpty()) {
@@ -267,8 +274,8 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve el alto de la matriz.
-	 * @return Alto de la matriz.
+	 * Get matrix height.
+	 * @return matrix height.
 	 */
 	protected int getHeight() {
 		if(matrix.isEmpty()) {
@@ -278,10 +285,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve la fila indicada en el indice.
+	 * Get matrix row.
 	 * 
-	 * @param row indice de fila.
-	 * @return Fila indicada en el indice.
+	 * @param row row index.
+	 * @return matrix row.
 	 */
 	@SuppressWarnings("unchecked")
 	protected ArrayList<String> getRow(int row){
@@ -292,10 +299,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve la columna indicada en el indice.
+	 * Get matrix column.
 	 * 
-	 * @param column indice de columna.
-	 * @return Columna indicada en el indice.
+	 * @param column column index.
+	 * @return matrix column.
 	 */
 	protected ArrayList<String> getColumn(int column){
 		if(matrix.isEmpty()) {
@@ -310,11 +317,9 @@ public class Matrix {
 	}
 		
 	/**
-	 * Devuelve la matriz de datos como matriz de numeros
-	 * reales. 
+	 * Get matrix information in double format.
 	 * 
-	 * @return Devuelve la matriz de datos como matriz de numeros
-	 * reales. 
+	 * @return double format matrix.
 	 */
 	protected double[][] castStr2Double(){
 		if(matrix.isEmpty()) return null;
@@ -330,9 +335,10 @@ public class Matrix {
 	}
 	
 	/**
-	 * Convierte un array de strings en un array de valores numericos reales.
-	 * @param array Array de strings.
-	 * @return Array de valores numericos reales.
+	 * Cast an array of string to an array of doubles.
+	 * 
+	 * @param array strings array.
+	 * @return doubles array.
 	 */
 	protected static double[] castStr2Double(ArrayList<String> array) {
 		double[] doubleArray = new double[array.size()];
@@ -344,8 +350,8 @@ public class Matrix {
 	}
 	
 	/**
-	 * Devuelve un String con la informacion almacenada en 
-	 * la matriz.
+	 * Get a string with the information of the matrix
+	 * in CSV format.
 	 */
 	@Override
 	public String toString() {

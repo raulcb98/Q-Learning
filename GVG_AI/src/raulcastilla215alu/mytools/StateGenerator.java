@@ -14,7 +14,6 @@ public class StateGenerator {
 	 * Generates all possible and logical agent state.
 	 * @return An array of states.
 	 */
-	
 	public static ArrayList<State> generate() {
 		int[] values = new int[2];
 		values[0] = 0;
@@ -43,6 +42,13 @@ public class StateGenerator {
 		return output;			
 	}
 	
+	/**
+	 * Add a new value to all combination.
+	 * 
+	 * @param combStates combinations values.
+	 * @param values to be added.
+	 * @return combinations with the new values.
+	 */
 	@SuppressWarnings("unchecked")
 	private static ArrayList<ArrayList<Integer>> addInteger2Combination(ArrayList<ArrayList<Integer>> combStates, int[] values) {
 		ArrayList<ArrayList<Integer>> output = new ArrayList<ArrayList<Integer>>();
@@ -59,6 +65,13 @@ public class StateGenerator {
 		return output;
 	}
 	
+	/**
+	 * Add a new value to all combination and create states for each combination.
+	 * 
+	 * @param combStates combinations values.
+	 * @param values to be added.
+	 * @return states.
+	 */
 	@SuppressWarnings("unchecked")
 	private static ArrayList<State> addInteger2States(ArrayList<ArrayList<Integer>> combStates, int[] values) {
 		ArrayList<State> output = new ArrayList<State>();
@@ -75,6 +88,12 @@ public class StateGenerator {
 		return output;
 	}
 	
+	/**
+	 * Create an array list with zeros.
+	 * 
+	 * @param length array length.
+	 * @return Array list with zeros. 
+	 */
 	private static ArrayList<Integer> zeros(int length){
 		ArrayList<Integer> aux = new ArrayList<>();
 		
@@ -87,6 +106,7 @@ public class StateGenerator {
 	
 	/**
 	 * Generates all possible combinations using the values and length specified.
+	 * 
 	 * @param length size of combination.
 	 * @param values possible values for each positions.
 	 * @return an array of arrays of integers.
@@ -96,7 +116,8 @@ public class StateGenerator {
 	}
 	
 	/**
-	 * Recursive call for combnk
+	 * Recursive call for combnk.
+	 * 
 	 * @param length size of combination.
 	 * @param values possible values for each positions.
 	 * @param array memory space to save middle values.
@@ -127,6 +148,7 @@ public class StateGenerator {
 	
 	/**
 	 * Removes illogical states.
+	 * 
 	 * @param combStates an array of arrays of integers with all possible combinations.
 	 */
 	private static void filterStates(ArrayList<ArrayList<Integer>> combStates){
@@ -140,6 +162,7 @@ public class StateGenerator {
 
 	/**
 	 * Applies restrictions to filter a state.
+	 * 
 	 * @param comb array of integers with one combination of values.
 	 * @return true if overcomes all restrictions.
 	 */

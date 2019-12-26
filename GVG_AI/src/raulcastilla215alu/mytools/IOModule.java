@@ -13,6 +13,7 @@ public class IOModule {
 
 	/**
 	 * Writes the content in the path.
+	 * 
 	 * @param path file to save the content.
 	 * @param content information to be saved.
 	 * @param append true to append the information at the end of the file.

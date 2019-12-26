@@ -41,7 +41,9 @@ public class MyAgent extends AbstractPlayer {
     protected ArrayList<Types.ACTIONS> actions;
 
     private Brain brain;
-
+    private StateObservation stateObs;
+    
+    
     /**
      * Public constructor with state observation and time due.
      * @param so state observation of the current game.
@@ -52,6 +54,7 @@ public class MyAgent extends AbstractPlayer {
         randomGenerator = new Random();
         brain = new Brain(stateObs, savePath);
         actions = stateObs.getAvailableActions(true);
+        this.stateObs = stateObs;
     }
 
 
@@ -64,21 +67,27 @@ public class MyAgent extends AbstractPlayer {
      */
     public Types.ACTIONS act(StateObservation stateObs, ElapsedCpuTimer elapsedTimer) {
     	
-//    	for(int i = 0; i < 100000; i++) {
+//    	for(int i = 0; i < 10000; i++) {
 //    		System.out.println("");
 //    	}
     	
+        this.stateObs = stateObs;
     	return brain.act(stateObs);
+    	
 //    	return brain.learn(stateObs);
     }
     
     public void close() {
     	brain.saveQTable();
-    	System.out.println("QTable saved!");
-    	
-    	double time = QLearning.time;
-    	double alpha = brain.getAlpha();
-    	
-		System.out.println("Time = " + time + " Alpha = " + alpha);
+//    	System.out.println("QTable saved!");
+//    	
+//    	double time = QLearning.time;
+//    	double alpha = brain.getAlpha();
+//    	double score = stateObs.getGameScore();
+//    	String row = Double.toString(time) + "," + Double.toString(alpha) + "," + Double.toString(score) + "\n";
+//    	
+//    	IOModule.write("./time_alpha_score.csv", row, true);
+//    	
+//		System.out.println("Time = " + time + " Alpha = " + alpha);
     }
 }

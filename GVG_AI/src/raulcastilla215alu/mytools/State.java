@@ -54,6 +54,11 @@ public class State {
 		
 	}
 	
+	/**
+	 * Copy constructor.
+	 * 
+	 * @param obj object to be copied.
+	 */
 	public State(State obj) {
 		this.frontBlock = obj.frontBlock;
 		this.backBlock = obj.backBlock;
@@ -71,6 +76,7 @@ public class State {
 	
 	/**
 	 * Constructor. 
+	 * 
 	 * @param array Private attributes values expressed with integers.
 	 */
 	public State(ArrayList<Integer> array) {
@@ -79,6 +85,7 @@ public class State {
 	
 	/**
 	 * Updates private attributes values.
+	 * 
 	 * @param array Updates private attributes values.
 	 */
 	protected void update(ArrayList<Integer> array) {

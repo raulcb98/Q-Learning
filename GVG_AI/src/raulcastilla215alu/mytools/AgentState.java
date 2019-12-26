@@ -51,6 +51,11 @@ public class AgentState extends State {
 		perceive(stateObs);
 	}
 	
+	/**
+	 * Copy constructor.
+	 * 
+	 * @param obj object to be copied.
+	 */
 	public AgentState(AgentState obj) {
 		super(obj);
 		this.agentPos = new Vector2d(obj.agentPos);
@@ -69,6 +74,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Interprets game informations.
+	 * 
 	 * @param stateObs game observations.
 	 */
 	public void perceive(StateObservation stateObs) {
@@ -143,6 +149,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Cast the position expressed in reals values to position expressed in cell coordinates.
+	 * 
 	 * @param pos position expressed in reals values.
 	 * @param blockSize reference measure to cast positions.
 	 * @return position expressed in cell coordinates.
@@ -160,6 +167,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Checks if the first observation of the ArrayList has the same category.
+	 * 
 	 * @param obs array of observations.
 	 * @param category category which must be compared.
 	 * @return true if the category is same.
@@ -171,6 +179,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Checks if exist a danger in the position specified taking into account the highway orientation.
+	 * 
 	 * @param grid game grid.
 	 * @param pos position which must be checked expressed in cell coordinate.
 	 * @return true if exist a car which could run over the agent.
@@ -187,6 +196,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Checks if exist a danger in the position specified without taking into account the highway orientation.
+	 * 
 	 * @param grid game grid.
 	 * @param pos position which must be checked expressed in cell coordinates.
 	 * @param orientation indicates the side of the road which must be checked.
@@ -247,6 +257,7 @@ public class AgentState extends State {
 	/**
 	 * Checks if the distance of the observation and pos is less or equal than the distance.
 	 * indicated by parameter. It only takes into account the axis x.
+	 * 
 	 * @param obs observation which must be checked. 
 	 * @param pos position to calculate the distance expressed in cell coordinates.
 	 * @param blockDistance max distance to consider near the object. 
@@ -261,6 +272,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Calculates the direction of the compass of the agent.
+	 * 
 	 * @param portalPos position of the goal.
 	 * @param agentPos position of the agent expressed in cell coordinates.
 	 * @return the direction of the compass.
@@ -280,6 +292,7 @@ public class AgentState extends State {
 
 	/**
 	 * Checks the highway orientation of the road in the pos introduced by parameters.
+	 * 
 	 * @param grid game grid.
 	 * @param pos position to be checked expressed in cell coordinate.
 	 * @return left, right or non orientation.
@@ -303,6 +316,7 @@ public class AgentState extends State {
 	
 	/**
 	 * Checks if the agent is dead.
+	 * 
 	 * @param stateObs game information.
 	 * @return true if the agent is dead.
 	 */
@@ -310,7 +324,14 @@ public class AgentState extends State {
 		Vector2d orientation = stateObs.getAvatarOrientation();
 		return orientation.equals(new Vector2d(0,1));
 	}
-		
+	
+	/**
+	 * Calculate the distance between the agent and the portal
+	 * in cell coordinates.
+	 * 
+	 * @param axis specify if the distance must be calculated using x axis or y axis.
+	 * @return distance to portal.
+	 */
 	public float getDistanceToPortal(int axis) {
 		float dif;
 		if(axis == 0) {
@@ -323,7 +344,13 @@ public class AgentState extends State {
 		return (float) Math.abs(dif);
 	}
 	
-	
+	/**
+	 * Look up the nearest hole in the same row.
+	 * 
+	 * @param grid game grid.
+	 * @param stateValues array of integers with the compass orientation.
+	 * @return left or right.
+	 */
 	private int getOraclePrediction(ArrayList<Observation>[][] grid, int[] stateValues) {
 		int posX = (int) agentPos.x;
 		int posY = (int) agentPos.y;
@@ -397,22 +424,37 @@ public class AgentState extends State {
 		return str;
 	}
 
+	/**
+	 * @return true if the agent is dead.
+	 */
 	public boolean isAgentDead() {
 		return agentDead;
 	}
 	
+	/**
+	 * @return true if the portal exist.
+	 */
 	public boolean portalExist() {
 		return portalCellPos != null;
 	}
 	
+	/**
+	 * @return current score.
+	 */
 	public double getScore() {
 		return score;
 	}
 	
+	/**
+	 * @return compass orientation.
+	 */
 	public int getCompass() {
 		return compass;
 	}
 
+	/**
+	 * @return agent position in cell coordinates.
+	 */
 	public Vector2d getAgentPos() {
 		return agentPos;
 	}

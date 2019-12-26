@@ -6,8 +6,18 @@ import core.game.StateObservation;
 import ontology.Types.ACTIONS;
 import raulcastilla215alu.matrix.QTable;
 
+/**
+ * Defines the agent brain.
+ * 
+ * @author Ricardo Manuel Ruiz Diaz.
+ * @author Raul Castilla Bravo.
+ *
+ */
 public class Brain {
 	
+	/**
+	 * Privates attributes.
+	 */
 	private QLearning qLearning;
 	private AgentState currentState;
 	private AgentState previousState;
@@ -16,6 +26,12 @@ public class Brain {
 	private int deadCounter;
 	private QTable qTable;
 	
+	/**
+	 * Constructor. Initializes the brain with the observations introduced by parameters.
+	 * 
+	 * @param stateObs game observations.
+	 * @param savePath CSV file path to load the information of the Qtable.
+	 */
 	public Brain(StateObservation stateObs, String savePath) {
 		this.savePath = savePath;
         currentState = new AgentState(stateObs);
@@ -30,6 +46,12 @@ public class Brain {
 		deadCounter = 0;
 	}
 	
+	/**
+	 * Percieve the information of the game and learn.
+	 * 
+	 * @param stateObs game observations.
+	 * @return next game action.
+	 */
 	public ACTIONS learn(StateObservation stateObs) {
 		previousState = new AgentState(currentState);
 		currentState.perceive(stateObs);
@@ -50,6 +72,12 @@ public class Brain {
 		}
 	}
 	
+	/**
+	 * Percieve the information of the game and return the best action.
+	 * 
+	 * @param stateObs game observations.
+	 * @return best action.
+	 */
 	public ACTIONS act(StateObservation stateObs) {
 
 		currentState.perceive(stateObs);
@@ -63,10 +91,16 @@ public class Brain {
 			return ACTIONS.ACTION_NIL; 
 	}
 	
+	/**
+	 * Save the Qtable information.
+	 */
 	public void saveQTable() {
 		qLearning.saveQTable(savePath);
 	}
 
+	/**
+	 * @return alpha value of the Q-learning.
+	 */
 	public float getAlpha() {
 		return this.qLearning.getAlpha();
 	}
